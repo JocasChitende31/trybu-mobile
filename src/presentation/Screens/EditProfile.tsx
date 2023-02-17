@@ -23,34 +23,54 @@ export function EditProfile () {
         flex={1}
         space={2}
         mt={2}
-        p={2}
+        p={5}
         bg='white'
       >
-        <Input
-          type="text"
-          placeholder="Digite o seu nome"
-          defaultValue={formData.name}
-        />
-        <Input
-          type="text"
-          placeholder="Digite o seu username"
-          defaultValue={formData.username}
-        />
-        <Input
-          type="text"
-          placeholder="Digite o seu email"
-          defaultValue={formData.email}
-        />
-        <Input
-          type="text"
-          placeholder="Digite o seu telefone"
-          defaultValue={formData.phone}
-        />
-        <Input
-          type="text"
-          placeholder="Digite o seu whatsapp"
-          defaultValue={formData.whatsapp}
-        />
+        <VStack>
+          <Text fontSize={16}>Nome</Text>
+          <Input
+            type="text"
+            placeholder="Digite o seu nome"
+            defaultValue={formData.name}
+          />
+        </VStack>
+
+        <VStack>
+          <Text fontSize={16}>Username</Text>
+          <Input
+            type="text"
+            placeholder="Digite o seu username"
+            defaultValue={formData.username}
+          />
+        </VStack>
+
+        <VStack>
+          <Text fontSize={16}>E-mail</Text>
+          <Input
+            type="text"
+            placeholder="Digite o seu e-mail"
+            defaultValue={formData.email}
+          />
+        </VStack>
+
+        <VStack>
+          <Text fontSize={16}>Telefone</Text>
+          <Input
+            type="text"
+            placeholder="Digite o seu telefone"
+            defaultValue={formData.phone}
+          />
+        </VStack>
+
+        <VStack>
+          <Text fontSize={16}>WhatsApp</Text>
+          <Input
+            type="text"
+            placeholder="Digite o seu whatsapp"
+            defaultValue={formData.whatsapp}
+          />
+        </VStack>
+
         <Button
           title="Salvar"
           type="PRIMARY"

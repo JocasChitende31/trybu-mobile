@@ -17,8 +17,9 @@ export function NewEvents () {
       />
 
       <VStack
-        p={3}
+        p={5}
         space={2}
+        bg='white'
       >
         <Input
           type="text"

@@ -7,6 +7,7 @@ import { Event } from "../../components/Event"
 import { Header } from "../../components/Header"
 import { Input } from "../../components/Input"
 import { IEvent } from "../../../@types/event"
+import { Intersect } from "phosphor-react-native"
 
 interface RouteParams {
   event: IEvent
@@ -25,30 +26,41 @@ export function EventDetail () {
       />
 
       <VStack
-        p={3}
+        p={5}
         space={2}
+        bg='white'
+      // mt={5}
       >
-        <Text>
+        <Text
+          fontSize={20}
+          mb={2}
+          pb={2}
+          borderBottomColor='yellow.300'
+          borderBottomWidth={1}
+        >
           {event.description}
         </Text>
-        <Text>
+        <Text fontSize={16}>
           Contactos: {event.contacts}
         </Text>
-        <Text>
+        <Text fontSize={16}>
           Realização: {event.owner}
         </Text>
-        <Text>
+        <Text fontSize={16}>
           Preço: {event.price}
         </Text>
-        <Text>
+        <Text fontSize={16}>
           Data de início: {event.startAt}
         </Text>
-        <Text>
+        <Text fontSize={16}>
           Data de fim: {event.endAt}
         </Text>
-        <Text>
+        <Text fontSize={16}>
           Endereço: {event.address}
         </Text>
+        <Button title="Quero participar">
+
+        </Button>
       </VStack>
     </VStack>
   )

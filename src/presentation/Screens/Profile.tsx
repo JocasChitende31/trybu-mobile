@@ -1,5 +1,5 @@
-import { HStack, Text, VStack } from "native-base"
-import { UserCircle, NotePencil } from "phosphor-react-native"
+import { Box, HStack, Text, VStack } from "native-base"
+import { UserCircle, NotePencil, Envelope, Phone, WhatsappLogo } from "phosphor-react-native"
 import { Pressable } from "react-native"
 import { useNavigation } from '@react-navigation/native'
 
@@ -36,10 +36,30 @@ export function Profile () {
         flex={1}
         space={2}
         mt={2}
-        p={2}
+        p={5}
         bg='white'
       >
-
+        <HStack
+          flexDir={'row'}
+          space={2}
+        >
+          <Envelope />
+          <Text fontSize={16}>Email: {user.email}</Text>
+        </HStack>
+        <HStack
+          flexDir={'row'}
+          space={2}
+        >
+          <Phone />
+          <Text fontSize={16}>Telefone: {user.phone ?? 'Adicionar'}</Text>
+        </HStack>
+        <HStack
+          flexDir={'row'}
+          space={2}
+        >
+          <WhatsappLogo />
+          <Text fontSize={16}>WhatsApp: {user.whatsapp ?? 'Não atribuido'}</Text>
+        </HStack>
       </VStack>
     </VStack>
   )

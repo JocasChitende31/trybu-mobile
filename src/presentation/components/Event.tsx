@@ -7,12 +7,11 @@ export function Event ({ event }: { event: IEvent }) {
   const { navigate } = useNavigation()
   return (
     <VStack
-      bg={'gray.200'}
+      bg={'gray.100'}
       p={3}
+      shadow={2}
     >
       <Text
-      // flex={1}
-      // textAlign={'center'}
       >{event.title}
       </Text>
       <Pressable
