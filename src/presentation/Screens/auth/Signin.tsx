@@ -67,6 +67,7 @@ export function Signin () {
       </HStack>
       <Button
         title='ENTRAR'
+        type='PRIMARY'
         mt={5}
         onPress={signIn}
         isLoading={userIsLoading}

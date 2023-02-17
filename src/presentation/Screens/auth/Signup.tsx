@@ -89,6 +89,7 @@ export function Signup () {
       </HStack>
       <Button
         title='ENTRAR'
+        type='PRIMARY'
         mt={5}
         onPress={handleSignup}
         isLoading={userIsLoading}
