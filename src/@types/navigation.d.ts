@@ -9,9 +9,8 @@ export declare global {
       detail: {
         id: string
       }
-      profile: {
-        id: string
-      }
+      profile: undefined
+      editprofile: undefined
     }
   }
 }
