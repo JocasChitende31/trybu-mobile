@@ -3,17 +3,9 @@ import { useToast } from "native-base"
 import { makeApiUrl } from "../../main/factory/api-url-factory"
 import { makeAxiosHttpClient } from "../../main/factory/axios-http-client-factory"
 import { AuthUtil } from "../../services/auth-util"
+import { IUser } from "../../@types/user"
 
-interface UserProps {
-  id: string
-  name: string
-  username: string
-  email: string
-  phone: string
-  whatsapp: string
-  createdAt: string
-  updatedAt: string
-}
+
 
 interface FormDataSigninProps {
   email: string
@@ -29,7 +21,7 @@ interface FormDataSignupProps {
 
 
 export interface AuthContextDataProps {
-  user: UserProps
+  user: IUser
   userIsLoading: boolean
   signIn: () => Promise<void>,
   signUp: () => Promise<boolean>,
@@ -49,7 +41,7 @@ export const AuthContext = createContext({} as AuthContextDataProps)
 
 export function AuthContextProvider ({ children }: AuthProviderProps) {
   const [userIsLoading, setUserIsLoading] = useState(false)
-  const [user, setUser] = useState<UserProps>({} as UserProps)
+  const [user, setUser] = useState<IUser>({} as IUser)
   const [formDataSignin, setFormDataSignin] = useState<FormDataSigninProps>({} as FormDataSigninProps)
   const [formDataSignup, setFormDataSignup] = useState<FormDataSignupProps>({} as FormDataSignupProps)
   const toast = useToast()
@@ -141,7 +133,7 @@ export function AuthContextProvider ({ children }: AuthProviderProps) {
       placement: 'top',
       bgColor: 'green.500'
     })
-    setUser({} as UserProps)
+    setUser({} as IUser)
     AuthUtil.signOut()
   }
 
