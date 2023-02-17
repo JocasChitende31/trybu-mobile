@@ -5,8 +5,14 @@ import { makeAxiosHttpClient } from "../../main/factory/axios-http-client-factor
 import { AuthUtil } from "../../services/auth-util"
 
 interface UserProps {
+  id: string
   name: string
+  username: string
   email: string
+  phone: string
+  whatsapp: string
+  createdAt: string
+  updatedAt: string
 }
 
 interface FormDataSigninProps {
