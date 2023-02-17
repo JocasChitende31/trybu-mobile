@@ -5,6 +5,7 @@ import { useAuth } from '../../hooks/useAuth'
 import { InterfacePressableProps } from 'native-base/lib/typescript/components/primitives/Pressable/types'
 
 import { ModalAlert } from './Modal'
+import { StringUtils } from '../../utils/string-utils'
 
 export function MenuBar () {
   const { user, signOut } = useAuth()
@@ -18,7 +19,7 @@ export function MenuBar () {
         h={5}
       >
         <Text color={'yellow.400'}>
-          {user.name.split(' ')[0]}
+          {StringUtils.getAvatarName(user.name)}
         </Text>
       </Pressable>
     )
@@ -49,15 +50,6 @@ export function MenuBar () {
               trigger={menuTrigger}
             >
               <Menu.Item>
-                {/* <Avatar
-                  _text={user.name}
-                  w={8}
-                  h={8}
-                  rounded="full"
-                  borderWidth={2}
-                  borderColor="gray.800"
-                >
-                </Avatar> */}
                 <Text>{user.name}</Text>
               </Menu.Item>
               <Menu.Item onPress={handleConfirmSignout}>
