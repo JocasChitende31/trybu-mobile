@@ -88,7 +88,7 @@ export function Signup () {
         </Pressable>
       </HStack>
       <Button
-        title='ENTRAR'
+        title='CADASTRAR'
         type='PRIMARY'
         mt={5}
         onPress={handleSignup}
