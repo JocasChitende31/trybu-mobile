@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import { Pressable, Text, Menu, Box, NativeBaseProvider, Center, Avatar, Tooltip } from "native-base"
+import { Pressable, Text, Menu, Box, NativeBaseProvider, Center } from "native-base"
 import { SignOut } from 'phosphor-react-native'
+import { useNavigation } from '@react-navigation/native'
+
 import { useAuth } from '../../hooks/useAuth'
 import { InterfacePressableProps } from 'native-base/lib/typescript/components/primitives/Pressable/types'
 
@@ -10,6 +12,7 @@ import { StringUtils } from '../../utils/string-utils'
 export function MenuBar () {
   const { user, signOut } = useAuth()
   const [openModal, setOpenModal] = useState(false)
+  const { navigate } = useNavigation()
 
   const menuTrigger = (triggerProps: InterfacePressableProps) => {
     return (
@@ -49,7 +52,7 @@ export function MenuBar () {
               w="190"
               trigger={menuTrigger}
             >
-              <Menu.Item>
+              <Menu.Item onPress={() => navigate('profile')}>
                 <Text>{user.name}</Text>
               </Menu.Item>
               <Menu.Item onPress={handleConfirmSignout}>
