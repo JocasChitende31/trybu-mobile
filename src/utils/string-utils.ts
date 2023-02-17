@@ -6,7 +6,8 @@ export class StringUtils {
   }
 
   static getLastWord(text: string): string {
-    return ArrayUtils.convertToArray(text, ' ').at(-1)
+    const lastWord = ArrayUtils.convertToArray(text, ' ')
+    return lastWord[lastWord.length - 1]
   }
 
   static getFirstAndLastWord(text: string): string {
@@ -24,7 +25,8 @@ export class StringUtils {
   }
 
   static getLastLetter(text: string): string {
-    return ArrayUtils.convertToArray(text).at(-1)
+    const lastLetter = ArrayUtils.convertToArray(text)
+    return lastLetter[lastLetter.length - 1]
   }
 
   static getFirstAndLastLetter(text: string): string {
