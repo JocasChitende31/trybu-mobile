@@ -4,6 +4,8 @@ export enum IScreens {
   signup = 'signup',
   services = 'services',
   events = 'events',
+  eventdetail = 'eventdetail',
+  newevent = 'newevent',
   detail = 'detail',
   profile = 'profile',
   editprofile = 'editprofile',

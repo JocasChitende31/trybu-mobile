@@ -1,15 +1,46 @@
-import { VStack } from "native-base"
+import { HStack, Text, VStack } from "native-base"
+import { UserCircle, NotePencil } from "phosphor-react-native"
+import { Pressable } from "react-native"
+import { useNavigation } from '@react-navigation/native'
+
+import { useAuth } from "../../hooks/useAuth"
+import { StringUtils } from "../../utils/string-utils"
 import { Header } from "../components/Header"
 
 export function Profile () {
-
+  const { navigate } = useNavigation()
+  const { user } = useAuth()
   return (
     <VStack flex={1} >
       <Header
         title={'Perfil'}
         showBackButton
       />
+      <HStack
+        alignItems={'center'}
+        justifyContent='center'
+        mt={3}
+        borderBottomWidth={2}
+        borderBottomColor='yellow.400'
+        space={2}
+      >
+        <UserCircle size={60} />
 
+        <Text fontSize={32}>{StringUtils.getFirstAndLastWord(user.name)}</Text>
+
+        <Pressable onPress={() => navigate('editprofile')}>
+          <NotePencil />
+        </Pressable>
+      </HStack>
+      <VStack
+        flex={1}
+        space={2}
+        mt={2}
+        p={2}
+        bg='white'
+      >
+
+      </VStack>
     </VStack>
   )
 }

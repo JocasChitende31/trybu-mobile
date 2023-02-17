@@ -8,6 +8,10 @@ import { Detail } from '../Screens/Detail'
 import { Profile } from '../Screens/Profile'
 import { Services } from '../Screens/Services'
 import { Events } from '../Screens/Events'
+import { EditProfile } from '../Screens/EditProfile'
+import { EventProvider } from '../context/EventContext'
+import { NewEvents } from '../Screens/Events/NewEvents'
+import { EventDetail } from '../Screens/Events/EventDetail'
 
 const { Navigator, Screen } = createBottomTabNavigator()
 
@@ -53,6 +57,13 @@ export function AppRoutes () {
         }}
       />
       <Screen
+        name="editprofile"
+        component={EditProfile}
+        options={{
+          tabBarButton: () => null,
+        }}
+      />
+      <Screen
         name="services"
         component={Services}
         options={{
@@ -67,7 +78,20 @@ export function AppRoutes () {
           tabBarIcon: ({ color }) => <ClipboardText color={color} size={iconSize} />,
           tabBarLabel: '',
         }}
-
+      />
+      <Screen
+        name="newevent"
+        component={NewEvents}
+        options={{
+          tabBarButton: () => null,
+        }}
+      />
+      <Screen
+        name="eventdetail"
+        component={EventDetail}
+        options={{
+          tabBarButton: () => null,
+        }}
       />
       <Screen
         name="detail"

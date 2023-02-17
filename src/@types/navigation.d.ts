@@ -1,3 +1,5 @@
+import { IEvent } from './event'
+
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
@@ -6,6 +8,10 @@ export declare global {
       signup: undefined
       services: undefined
       events: undefined
+      eventdetail: {
+        event: IEvent
+      }
+      newevent: undefined
       detail: {
         id: string
       }

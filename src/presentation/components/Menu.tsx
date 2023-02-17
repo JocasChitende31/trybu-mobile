@@ -18,13 +18,21 @@ export function MenuBar () {
     return (
       <Pressable
         accessibilityLabel="More options menu" {...triggerProps}
-        w={5}
-        h={5}
+        pr={2}
       >
-        <Text color={'yellow.400'}>
+        <Text
+          color={'gray.600'}
+          borderColor='gray.500'
+          borderWidth={1}
+          borderRadius={100}
+          justifyContent='center'
+          textAlign={'center'}
+          h={6}
+          w={6}
+        >
           {StringUtils.getAvatarName(user.name)}
         </Text>
-      </Pressable>
+      </Pressable >
     )
   }
 

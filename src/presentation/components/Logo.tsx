@@ -1,4 +1,4 @@
-import { Image, Text } from "native-base"
+import { Image, Text, IImageProps } from "native-base"
 
 const LogoImg = require('../../../assets/logo.png')
 const LogoImgLg = require('../../../assets/logotipo.png')
@@ -9,8 +9,12 @@ export function Logo () {
   )
 }
 
-export function LogoLG () {
+export function LogoLG (props: IImageProps) {
   return (
-    <Image source={LogoImgLg} alt='Logotipo RCS' />
+    <Image
+      source={LogoImgLg}
+      alt='Logotipo RCS'
+      {...props}
+    />
   )
 }

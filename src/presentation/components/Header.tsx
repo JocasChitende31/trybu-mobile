@@ -1,4 +1,4 @@
-import { Text, HStack, Box } from 'native-base'
+import { Text, HStack, Box, VStack } from 'native-base'
 import { CaretLeft, Export } from 'phosphor-react-native'
 import { useNavigation } from '@react-navigation/native'
 
@@ -6,6 +6,7 @@ import { ButtonIcon } from './ButtonIcon'
 import { useAuth } from '../../hooks/useAuth'
 import { MenuBar } from './Menu'
 import { IScreens } from '../../@types/screens'
+import { Logo, LogoLG } from './Logo'
 
 interface Props {
   title: string
@@ -19,14 +20,39 @@ export function Header ({ title, showBackButton = false, goTo }: Props) {
   const EmptyBoxSpace = () => (<Box w={6} h={6} />)
 
   return (
-    <HStack w="full" h={24} bgColor="gray.800" alignItems="flex-end" pb={5} px={5} position='relative'>
-      <HStack w="full" alignItems="center" justifyContent="space-between">
+    <VStack w="full"
+      bgColor="orange.50"
+      alignItems="flex-end"
+      position='relative'
+      pt={4}
+    >
+      <HStack
+        justifyContent={'center'}
+        w={'full'}
+        alignItems={'center'}
+        borderBottomColor='orange.100'
+        borderBottomWidth={1}
+        p={2}
+      >
+        <LogoLG
+          w={32}
+          h={10}
+        />
+      </HStack>
+      <HStack
+        w="full"
+        alignItems="center"
+        justifyContent="space-between"
+        p={2}
+        bg='gray.100'
+        mb={1}
+      >
         {
           showBackButton
             ? <ButtonIcon icon={CaretLeft} onPress={() => navigate(goTo ?? 'home')} />
             : <EmptyBoxSpace />
         }
-        <Text color="white" fontFamily="medium" fontSize="md" textAlign="center">
+        <Text color="gray.500" fontFamily="medium" fontSize="md" textAlign="center">
           {title}
         </Text>
 
@@ -36,6 +62,6 @@ export function Header ({ title, showBackButton = false, goTo }: Props) {
         }
       </HStack>
       <MenuBar />
-    </HStack >
+    </VStack >
   )
 }
