@@ -5,13 +5,15 @@ import { useNavigation } from '@react-navigation/native'
 import { ButtonIcon } from './ButtonIcon'
 import { useAuth } from '../../hooks/useAuth'
 import { MenuBar } from './Menu'
+import { IScreens } from '../../@types/screens'
 
 interface Props {
   title: string
   showBackButton?: boolean
+  goTo?: IScreens
 }
 
-export function Header ({ title, showBackButton = false }: Props) {
+export function Header ({ title, showBackButton = false, goTo }: Props) {
   const { navigate } = useNavigation()
   const { signOut } = useAuth()
   const EmptyBoxSpace = () => (<Box w={6} h={6} />)
@@ -21,7 +23,7 @@ export function Header ({ title, showBackButton = false }: Props) {
       <HStack w="full" alignItems="center" justifyContent="space-between">
         {
           showBackButton
-            ? <ButtonIcon icon={CaretLeft} onPress={() => navigate('home')} />
+            ? <ButtonIcon icon={CaretLeft} onPress={() => navigate(goTo ?? 'home')} />
             : <EmptyBoxSpace />
         }
         <Text color="white" fontFamily="medium" fontSize="md" textAlign="center">
