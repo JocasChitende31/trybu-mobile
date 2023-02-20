@@ -1,6 +1,4 @@
-import { Input as InptupNativeBase, IInputProps, VStack } from "native-base"
-
-
+import { Input as InptupNativeBase, IInputProps } from "native-base"
 
 interface Props extends IInputProps {
 }

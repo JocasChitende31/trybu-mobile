@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { ImageBackground } from 'react-native'
 import { useAuth } from '../../hooks/useAuth'
-import { Auth } from '../Screens/auth'
 import { AppRoutes } from './app.routes'
+import { AuthRoutes } from './auth.routes'
 
 const image = require('../../../assets/fundo.jpg')
 
@@ -12,7 +12,7 @@ export function Routes () {
   return (
     <ImageBackground source={image} style={{ flex: 1 }}>
       <NavigationContainer>
-        {user?.name ? <AppRoutes /> : <Auth />}
+        {user?.name ? <AppRoutes /> : <AuthRoutes />}
       </NavigationContainer>
     </ImageBackground>
   )

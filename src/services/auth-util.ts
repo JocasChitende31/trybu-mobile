@@ -2,7 +2,8 @@ import { LocalStorage } from '../infra/cache/localstorage'
 
 export class AuthUtil {
   static async signOut() {
-    LocalStorage.clear()
+    LocalStorage.remove('@TOKEN')
+    LocalStorage.remove('@USER')
   }
 
   static async getToken() {
@@ -11,6 +12,7 @@ export class AuthUtil {
 
   static async setToken(token: string) {
     await LocalStorage.set('@TOKEN', token)
+    await LocalStorage.set('@FIRSTTIME', 'false')
   }
 
   static async setUser(user: any) {
@@ -20,5 +22,9 @@ export class AuthUtil {
   static async getUser() {
     const user = await LocalStorage.get('@USER')
     return user ? JSON.parse(user) : null
+  }
+
+  static async firstTime() {
+    return (await LocalStorage.get('@FIRSTTIME')) ? false : true
   }
 }

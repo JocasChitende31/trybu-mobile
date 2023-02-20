@@ -2,7 +2,6 @@ import React from 'react'
 
 import { AlertDialog, Button, Center } from "native-base"
 
-
 type ModalPros = {
   title: string
   text: string

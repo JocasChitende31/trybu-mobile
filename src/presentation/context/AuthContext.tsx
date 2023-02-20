@@ -1,6 +1,5 @@
 import { createContext, ReactNode, useState, useEffect } from "react"
 import { useToast } from "native-base"
-import { makeApiUrl } from "../../main/factory/api-url-factory"
 import { makeAxiosHttpClient } from "../../main/factory/axios-http-client-factory"
 import { AuthUtil } from "../../services/auth-util"
 import { IUser } from "../../@types/user"
@@ -63,7 +62,6 @@ export function AuthContextProvider ({ children }: AuthProviderProps) {
     const { body, statusCode } = await makeAxiosHttpClient().post({
       url: '/auth/signup', body: formDataSignup
     })
-    console.log('body', body)
 
     setUserIsLoading(false)
     if ([201, 200].includes(statusCode)) {
@@ -86,8 +84,6 @@ export function AuthContextProvider ({ children }: AuthProviderProps) {
   }
 
   async function signIn () {
-    setUserIsLoading(true)
-
     if (!formDataSignin.email || formDataSignin.email.trim() == '' || !formDataSignin.password || formDataSignin.password.trim() == '') {
       toast.show({
         title: 'Informe o email e a senha.',
@@ -95,15 +91,17 @@ export function AuthContextProvider ({ children }: AuthProviderProps) {
         bgColor: 'red.500'
       })
     } else {
+      setUserIsLoading(true)
+
       const { body } = await makeAxiosHttpClient().post({
-        url: makeApiUrl('/auth/login'), body: formDataSignin
+        url: '/auth/login', body: formDataSignin
       })
       const access_token = body.access_token
       if (access_token) {
         await AuthUtil.setToken(access_token)
 
         const { body: userData } = await makeAxiosHttpClient().get({
-          url: makeApiUrl('/users/me')
+          url: '/users/me'
         })
 
         setFormDataSignin({} as FormDataSigninProps)
@@ -123,8 +121,8 @@ export function AuthContextProvider ({ children }: AuthProviderProps) {
           bgColor: 'red.500'
         })
       }
+      setUserIsLoading(false)
     }
-    setUserIsLoading(false)
   }
 
   async function signOut () {

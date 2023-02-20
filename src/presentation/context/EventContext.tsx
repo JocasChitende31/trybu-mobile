@@ -1,7 +1,6 @@
 import { createContext, useState, ReactNode } from "react"
 import { IEvent } from "../../@types/event"
 import { EventList } from "../../utils/data/event"
-type PageProps = 'signin' | 'signup' | 'recover'
 
 export interface EventProps {
   events: IEvent[],

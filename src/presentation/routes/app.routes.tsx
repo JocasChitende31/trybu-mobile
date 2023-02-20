@@ -2,14 +2,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { useTheme } from 'native-base'
 import { Briefcase, House, UserCircle, ClipboardText } from 'phosphor-react-native'
 
-import { Signin } from '../Screens/auth/Signin'
 import { Home } from '../Screens/Home'
-import { Detail } from '../Screens/Detail'
 import { Profile } from '../Screens/Profile'
 import { Services } from '../Screens/Services'
 import { Events } from '../Screens/Events'
 import { EditProfile } from '../Screens/EditProfile'
-import { EventProvider } from '../context/EventContext'
 import { NewEvents } from '../Screens/Events/NewEvents'
 import { EventDetail } from '../Screens/Events/EventDetail'
 
@@ -27,7 +24,6 @@ export function AppRoutes () {
         tabBarActiveTintColor: colors.orange[600],
         tabBarInactiveTintColor: colors.gray[300],
         tabBarStyle: {
-          position: 'absolute',
           height: sizes[16],
           borderTopWidth: 2,
           borderTopColor: colors.yellow[400],
@@ -89,20 +85,6 @@ export function AppRoutes () {
       <Screen
         name="eventdetail"
         component={EventDetail}
-        options={{
-          tabBarButton: () => null,
-        }}
-      />
-      <Screen
-        name="detail"
-        component={Detail}
-        options={{
-          tabBarButton: () => null,
-        }}
-      />
-      <Screen
-        name="signin"
-        component={Signin}
         options={{
           tabBarButton: () => null,
         }}

@@ -1,12 +1,12 @@
 import { Text, HStack, Box, VStack } from 'native-base'
-import { CaretLeft, Export } from 'phosphor-react-native'
+import { CaretLeft } from 'phosphor-react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import { ButtonIcon } from './ButtonIcon'
 import { useAuth } from '../../hooks/useAuth'
 import { MenuBar } from './Menu'
 import { IScreens } from '../../@types/screens'
-import { Logo, LogoLG } from './Logo'
+import { LogoLG } from './Logo'
 
 interface Props {
   title: string

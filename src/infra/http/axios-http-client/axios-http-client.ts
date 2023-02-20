@@ -1,8 +1,10 @@
 import axios, { AxiosResponse } from 'axios'
 
-const axiosClient = axios.create({
-  baseURL: process.env.API_BASE_URL,
-})
+const axiosClient = () => {
+  return axios.create({
+    baseURL: process.env.API_BASE_URL,
+  })
+}
 
 import {
   HttpPostClient,
@@ -36,7 +38,7 @@ export class AxiosHttpClient
     let httpResponse: AxiosResponse<any>
     try {
       const config = await axiosConfig()
-      httpResponse = await axiosClient.post(params.url, params.body, config)
+      httpResponse = await axiosClient().post(params.url, params.body, config)
     } catch (error) {
       httpResponse = error.response
     }
@@ -50,7 +52,7 @@ export class AxiosHttpClient
     let httpResponse: AxiosResponse<any>
     try {
       const config = await axiosConfig()
-      httpResponse = await axiosClient.get(params.url, config)
+      httpResponse = await axiosClient().get(params.url, config)
     } catch (error) {
       httpResponse = error.response
     }

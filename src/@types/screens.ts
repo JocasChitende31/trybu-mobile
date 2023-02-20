@@ -1,5 +1,6 @@
 export enum IScreens {
   home = 'home',
+  start = 'start',
   signin = 'signin',
   signup = 'signup',
   services = 'services',
