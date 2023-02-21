@@ -45,7 +45,7 @@ export function MenuBar () {
       <ModalAlert
         title='Terminar sessão'
         text='Deseja realmente terminar a sessão?'
-        onConfirme={signOut}
+        onConfirme={() => signOut('Sessão terminada.')}
         open={openModal}
         onClose={() => setOpenModal(false)}
       />

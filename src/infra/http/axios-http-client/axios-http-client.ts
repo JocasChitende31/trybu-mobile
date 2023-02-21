@@ -21,6 +21,7 @@ import {
   HttpPostClient,
   HttpPostParams,
   HttpResponse,
+  HttpStatusCode,
 } from '../../../data/protocol/http'
 import {
   HttpGetClient,
@@ -47,7 +48,7 @@ export class AxiosHttpClient
     } catch (error) {
       httpResponse = error?.response ?? {
         data: error,
-        statusCode: 500,
+        statusCode: HttpStatusCode.serverError,
       }
     }
     return {

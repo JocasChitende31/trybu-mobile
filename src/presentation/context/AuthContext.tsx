@@ -4,8 +4,6 @@ import { makeAxiosHttpClient } from "../../main/factory/axios-http-client-factor
 import { AuthUtil } from "../../services/auth-util"
 import { IUser } from "../../@types/user"
 
-
-
 interface FormDataSigninProps {
   email: string
   password: string
@@ -24,7 +22,7 @@ export interface AuthContextDataProps {
   userIsLoading: boolean
   signIn: () => Promise<void>,
   signUp: () => Promise<boolean>,
-  signOut: () => Promise<void>,
+  signOut: (message?: string) => Promise<void>,
   formDataSignin: FormDataSigninProps,
   setFormDataSignin: (formData: FormDataSigninProps) => void
   formDataSignup: FormDataSignupProps,
@@ -125,12 +123,15 @@ export function AuthContextProvider ({ children }: AuthProviderProps) {
     }
   }
 
-  async function signOut () {
-    toast.show({
-      title: 'Terminou a sessão.',
-      placement: 'top',
-      bgColor: 'green.500'
-    })
+  async function signOut (message?: string) {
+    if (message) {
+      toast.show({
+        title: message,
+        placement: 'top',
+        bgColor: 'green.500'
+      })
+    }
+
     setUser({} as IUser)
     AuthUtil.signOut()
   }

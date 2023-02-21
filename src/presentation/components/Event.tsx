@@ -1,29 +1,61 @@
-import { HStack, Pressable, Text, VStack } from "native-base"
+import { HStack, Image, Pressable, Text, VStack } from "native-base"
 import { useNavigation } from '@react-navigation/native'
 
 import { IEvent } from "../../@types/event"
+import { DateUtils } from "../../utils/date-utils"
+import { Calendar } from "phosphor-react-native"
+import { UrlUtils } from "../../utils/url-utils"
 
 export function Event ({ event }: { event: IEvent }) {
   const { navigate } = useNavigation()
   return (
     <VStack
-      bg={'gray.100'}
-      p={3}
+      bg={'white'}
       shadow={2}
     >
-      <Text
-      >{event.title}
-      </Text>
-      <Pressable
-        onPress={() => navigate('eventdetail', { event: event })}
+      {event.picture &&
+        <Image
+          source={{ uri: `${UrlUtils.uploadUrl()}/${event.picture}` }}
+          alt='Imagem'
+          height={200}
+        />
+      }
+      <VStack
+        p={3}
       >
         <Text
-          color={'yellow.700'}
+          fontSize={18}
         >
-          Ver mais
+          {event.title}
         </Text>
-      </Pressable>
+        <HStack
+          alignItems={'center'}
+          space={2}
+        >
+          <Calendar size={18} />
+          <HStack
+            bg={'gray.100'}
+            px={2}
+            py={1}
+          >
+            <Text>{DateUtils.getDateTimeMinute(new Date(event.startsAt))}</Text>
 
+            {event.endsAt &&
+              <Text>{DateUtils.getDate(new Date(event.endsAt))}</Text>
+            }
+          </HStack>
+        </HStack>
+
+        <Pressable
+          onPress={() => navigate('eventdetail', { event: event })}
+        >
+          <Text
+            color={'yellow.700'}
+          >
+            Ver mais
+          </Text>
+        </Pressable>
+      </VStack>
     </VStack>
   )
 }
