@@ -10,3 +10,4 @@ export type IScreens =
   | 'detail'
   | 'profile'
   | 'editprofile'
+  | 'passwordrecover'
