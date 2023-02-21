@@ -1,7 +1,6 @@
 import DateTimePicker from "@react-native-community/datetimepicker"
-import * as ImagePicker from 'expo-image-picker'
 
-import { IInputProps, VStack, HStack, Box, Text, Pressable, Image } from "native-base"
+import { IInputProps, VStack, HStack } from "native-base"
 import { useState } from "react"
 import { Alert } from "react-native"
 import { IEvent } from "../../../@types/event"
@@ -12,44 +11,13 @@ import { Button } from "../../components/Button"
 import { Input, TextArea } from "../../components/Input"
 import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
 import { TextTitle } from "../../components/TextTitle"
+import { UploadContainer, UploadFileProps } from "../../components/UploadContainer"
 
 export function NewEvents () {
   const [formData, setFormData] = useState<IEvent>({} as IEvent)
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  const [photo, setPhoto] = useState<{ uri: string, type: string, name: string }>(null)
-
-  const [photoProps, setPhotoProps] = useState({ width: 0, height: 0 })
-
-  const handleChoosePhoto = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      // aspect: [4, 3],
-      quality: 1,
-    })
-
-    console.log(result)
-
-    if (!result.canceled) {
-      const { uri, type, fileName, width, height } = result.assets[0]
-
-      const splitName = uri.split('/')
-      const name = fileName ?? splitName[splitName.length - 1]
-
-      const exSplit = name.split('.')
-      const ext = exSplit[exSplit.length - 1]
-
-      const typeSplit = type.split('/')
-      let newType: string = type
-      if (typeSplit.length == 1) {
-        newType = `${type}/${ext}`
-      }
-
-      setPhotoProps({ width, height })
-      setPhoto({ uri, type: newType, name })
-    }
-  }
+  const [photo, setPhoto] = useState<UploadFileProps>(null)
 
   const [modeDate] = useState('date')
   const [modeTime] = useState('time')
@@ -241,29 +209,13 @@ export function NewEvents () {
             placeholder="Contactos"
             onChangeText={(text) => handleInputChange(text, 'contact')}
           />
-          <Box>
-            <Text color={'gray.500'} mb={1}>
-              Imagem/Banner/capa do evento
-            </Text>
-            <Pressable
-              h={32}
-              p={2}
-              alignItems='center'
-              justifyContent='center'
-              borderWidth={"1"}
-              borderStyle='dashed'
-              onPress={handleChoosePhoto}
-            >
-              {photo ?
-                <Image source={{ uri: photo.uri }} alt='Foto'
-                  width={'full'}
-                  height={'full'}
-                />
-                :
-                <Text color={'gray.500'}>Clique para adicionar a imagem</Text>
-              }
-            </Pressable>
-          </Box>
+
+          <UploadContainer
+            onSelectFile={setPhoto}
+            label='Imagem/Banner/capa do evento'
+            placeholder="Clique aqui para selecionar imagem"
+          />
+
           <TextArea h={20}
             label="Legenda/conteúdo"
             placeholder="Descreva aqui de forma resumida 
