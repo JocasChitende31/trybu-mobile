@@ -25,6 +25,7 @@ export function Input ({ label, required, width, mode = 'dark', nolabel, ...rest
           _focus={{
             bg: mode == 'dark' ? 'white' : 'gray.500'
           }}
+          fontFamily='medium'
           {...rest}
         />
       </FormControl>
@@ -47,6 +48,7 @@ export function TextArea ({ label, required, width, ...rest }: TextAreaProps) {
           h={20}
           fontSize='md'
           color={'gray.500'}
+          fontFamily='medium'
           {...rest}
         />
       </FormControl>
