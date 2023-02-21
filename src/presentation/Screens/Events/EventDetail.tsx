@@ -35,10 +35,10 @@ export function EventDetail () {
             Preço: {event.price}
           </Text>
           <Text fontSize={16}>
-            Data de início: {event.startAt}
+            Data de início: {event.startsAt}
           </Text>
           <Text fontSize={16}>
-            Data de fim: {event.endAt}
+            Data de fim: {event.endsAt}
           </Text>
           <Text fontSize={16}>
             Endereço: {event.address}

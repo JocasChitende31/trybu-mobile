@@ -4,9 +4,9 @@ export type IEvent = {
   description: string
   owner: string
   address: string
-  startAt: string
-  endAt: string
+  startsAt: string
+  endsAt: string
   price: string
-  status: 'Publicado' | 'Pendente' | 'Inactivo'
+  status: 'Publicado' | 'Pendente' | 'Inactivo' | null
   contacts: string
 }

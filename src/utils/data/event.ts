@@ -8,8 +8,8 @@ export const EventList = [
     contacts: '923123456',
     description:
       'Encontro dos empreendedores é um evento que vai mudar a vida dos empreendedores',
-    startAt: new Date().toISOString(),
-    endAt: new Date().toISOString(),
+    startsAt: new Date().toISOString(),
+    endsAt: new Date().toISOString(),
     owner: 'Xando',
     price: '15.000kz',
     status: 'Publicado',
@@ -21,8 +21,8 @@ export const EventList = [
     contacts: '923123456',
     description:
       'Moedas nacionais é um evento que vai mudar a vida dos empreendedores',
-    startAt: new Date().toISOString(),
-    endAt: new Date().toISOString(),
+    startsAt: new Date().toISOString(),
+    endsAt: new Date().toISOString(),
     owner: 'Trybu',
     price: '25.000kz',
     status: 'Publicado',
@@ -34,8 +34,8 @@ export const EventList = [
     contacts: '923123456',
     description:
       'Empreendedor de sucesso é um evento que vai mudar a vida dos empreendedores',
-    startAt: new Date().toISOString(),
-    endAt: new Date().toISOString(),
+    startsAt: new Date().toISOString(),
+    endsAt: new Date().toISOString(),
     owner: 'Trybu',
     price: '25.000kz',
     status: 'Publicado',
@@ -47,8 +47,8 @@ export const EventList = [
     contacts: '923123456',
     description:
       'Negócio em 2023 é um evento que vai mudar a vida dos empreendedores',
-    startAt: new Date().toISOString(),
-    endAt: new Date().toISOString(),
+    startsAt: new Date().toISOString(),
+    endsAt: new Date().toISOString(),
     owner: 'Trybu',
     price: '25.000kz',
     status: 'Publicado',

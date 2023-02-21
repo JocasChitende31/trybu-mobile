@@ -3,6 +3,7 @@ import * as ImagePicker from 'expo-image-picker'
 
 import { IInputProps, VStack, HStack, Box, Text, Pressable, Image } from "native-base"
 import { useState } from "react"
+import { IEvent } from "../../../@types/event"
 import { DateUtils } from "../../../utils/date-utils"
 
 import { Button } from "../../components/Button"
@@ -12,6 +13,7 @@ import { TextTitle } from "../../components/TextTitle"
 
 export function NewEvents () {
   const [photo, setPhoto] = useState(null)
+  const [formData, setFormData] = useState<IEvent>({} as IEvent)
   const [photoProps, setPhotoProps] = useState({ width: 0, height: 0 })
 
   const handleChoosePhoto = async () => {
@@ -31,8 +33,6 @@ export function NewEvents () {
       setPhoto(uri)
     }
   }
-
-
 
   const [modeDate] = useState('date')
   const [modeTime] = useState('time')
@@ -74,6 +74,20 @@ export function NewEvents () {
     setEndTime(DateUtils.getHourMinute(currentTime) + ':00')
   }
 
+  const handleInputChange = (text: string, name: string) => {
+    setFormData({ ...formData, [name]: text })
+  }
+
+  const handleSubmit = async (): Promise<void> => {
+    const data = {
+      ...formData,
+      startsAt: startDate && startTime ? `${startDate} ${startTime}` : undefined,
+      endsAt: endDate && endTime ? `${endDate} ${endTime}` : undefined,
+    } as IEvent
+    console.log('formData', data)
+
+  }
+
   return (
     <Layout backTo="events">
       <LayoutHeader>
@@ -88,6 +102,7 @@ export function NewEvents () {
             label="Título do evento"
             type="text"
             placeholder="Título do evento"
+            onChangeText={(text) => handleInputChange(text, 'title')}
           />
           <HStack space={3}>
             {
@@ -105,6 +120,7 @@ export function NewEvents () {
               placeholder="Data início"
               width={'48%'}
               onPressIn={() => setShowStartDate(true)}
+              onChangeText={(text) => handleInputChange(text, 'startDate')}
             />
             {
               showStartTime &&
@@ -122,6 +138,7 @@ export function NewEvents () {
               placeholder="Hora início"
               width={'48%'}
               onPressIn={() => setShowStartTime(true)}
+              onChangeText={(text) => handleInputChange(text, 'startTime')}
             />
           </HStack>
           <HStack space={3}>
@@ -139,6 +156,7 @@ export function NewEvents () {
               placeholder="Data fim"
               width={'48%'}
               onPressIn={() => setShowEndDate(true)}
+              onChangeText={(text) => handleInputChange(text, 'endDate')}
             />
             {
               showEndTime &&
@@ -155,6 +173,7 @@ export function NewEvents () {
               placeholder="Hora fim"
               width={'48%'}
               onPressIn={() => setShowEndTime(true)}
+              onChangeText={(text) => handleInputChange(text, 'endTime')}
             />
           </HStack>
           <Input
@@ -162,15 +181,18 @@ export function NewEvents () {
             label="Local"
             type="text"
             placeholder="Local"
+            onChangeText={(text) => handleInputChange(text, 'address')}
           />
           <Input
             label="Preço"
             type="text"
             placeholder="Preço"
+            onChangeText={(text) => handleInputChange(text, 'price')}
           />
           <Input
             type="text"
             placeholder="Contactos"
+            onChangeText={(text) => handleInputChange(text, 'contact')}
           />
           <Box>
             <Text color={'gray.500'} mb={1}>
@@ -200,10 +222,12 @@ export function NewEvents () {
             placeholder="Descreva aqui de forma resumida 
             os pontos que serão abordados no seu evento"
             fontSize='md'
+            onChangeText={(text) => handleInputChange(text, 'description')}
           />
           <Button
             title="Salvar"
             type="PRIMARY"
+            onPress={handleSubmit}
           />
         </VStack>
       </LayoutBody>
