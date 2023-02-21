@@ -12,9 +12,9 @@ export function Button ({ title, type = 'SECONDARY', ...rest }: Props) {
       h={14}
       rounded="sm"
       fontSize="md"
-      bg={type === 'PRIMARY' ? 'yellow.600' : 'orange.900'}
+      bg={type === 'PRIMARY' ? '#ECB44A' : 'orange.900'}
       _pressed={{
-        bg: type === "PRIMARY" ? 'yellow.500' : 'orange.800'
+        bg: type === "PRIMARY" ? 'yellow.600' : 'orange.800'
       }}
       _spinner={{
         color: type === 'PRIMARY' ? 'black' : 'white',
