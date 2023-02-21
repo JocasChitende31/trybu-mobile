@@ -26,6 +26,7 @@ export function Input ({ label, required, width, w, mode = 'dark', nolabel, ...r
             bg: mode == 'dark' ? 'white' : 'gray.500'
           }}
           fontFamily='medium'
+          color='gray.500'
           {...rest}
         />
       </FormControl>

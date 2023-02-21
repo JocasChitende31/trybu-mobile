@@ -5,6 +5,6 @@ type TextTitlePros = {
 }
 export function TextTitle ({ title }: TextTitlePros) {
   return (
-    <Text fontSize={'lg'} textTransform='uppercase'>{title}</Text>
+    <Text fontSize={'lg'} textTransform='uppercase' fontFamily='medium'>{title}</Text>
   )
 }
