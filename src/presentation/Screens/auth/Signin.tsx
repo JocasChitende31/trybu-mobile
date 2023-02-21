@@ -1,12 +1,12 @@
-import { Center, HStack, Pressable, Text } from 'native-base'
+import { Box, HStack, Icon, Pressable, Text, VStack } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
+import { MaterialIcons, FontAwesome } from '@expo/vector-icons'
 
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import { LogoLG } from '../../components/Logo'
 import { useAuth } from '../../../hooks/useAuth'
-import { LayoutAuth } from '../../components/Layout'
-
+import { LayoutAuth, LayoutBody } from '../../components/Layout'
 
 export function Signin () {
   const { navigate } = useNavigation()
@@ -18,69 +18,130 @@ export function Signin () {
 
   return (
     <LayoutAuth>
-      <Center flex={1} p={5} alignItems="center">
+      <Box alignItems='center' mt={10}>
         <LogoLG />
+      </Box>
+      <LayoutBody>
         <Text
-          color="white"
+          color="orange.900"
           textAlign="center"
           fontSize={'2xl'}
           my={4}
         >
-          Iniciar sessão
+          Login
         </Text>
 
-        <Input
-          mode='dark'
-          nolabel
-          w={'full'}
-          type='text'
-          placeholder='E-mail ou telefone'
-          onChangeText={
-            (text: string) => {
-              handleChangeInput('email', text)
+        <VStack
+          w='full'
+          space={4}
+        >
+          <Input
+            mode='dark'
+            nolabel
+            type='text'
+            placeholder='E-mail ou telefone'
+            onChangeText={
+              (text: string) => {
+                handleChangeInput('email', text)
+              }
             }
-          }
-          value={formDataSignin.email || ''}
-        />
-        <Input
-          mode='dark'
-          nolabel
-          w={'full'}
-          type='password'
-          placeholder='Palavra passe'
-          onChangeText={
-            (text: string) => {
-              handleChangeInput('password', text)
+            value={formDataSignin.email || ''}
+          />
+          <Input
+            mode='dark'
+            nolabel
+            type='password'
+            placeholder='Palavra passe'
+            onChangeText={
+              (text: string) => {
+                handleChangeInput('password', text)
+              }
             }
-          }
-          value={formDataSignin.password || ''}
-          mt={'5'}
-        />
-        <Pressable>
-          <Text color={'white'} textTransform='uppercase' mt={2}>
-            Recuperar a palavra passe
-          </Text>
-        </Pressable>
+            value={formDataSignin.password || ''}
+          />
+          <Button
+            title='ENTRAR'
+            type='PRIMARY'
+            onPress={signIn}
+            isLoading={userIsLoading}
+            _loading={{ _spinner: { color: 'white' } }}
+          />
+        </VStack>
 
-        <HStack space={2} alignItems='center'>
-          <Text color={'white'} textTransform='uppercase' mt={2}>
-            Ainda não possui uma conta?
-          </Text>
-          <Pressable onPress={() => {
-            navigate('signup')
-          }}>
-            <Text color={'red.200'}>Regista-te</Text>
+        <VStack
+          space={3}
+          mt={1}
+        >
+          <Pressable
+            w='full'
+            mt={2}
+            py={2}
+            alignItems='center'
+            borderTopColor='yellow.500'
+            borderBottomColor='yellow.500'
+            borderTopWidth={0.5}
+            borderBottomWidth={0.5}
+            onPress={() => navigate('passwordrecover')}
+          >
+            <Text color={'yellow.400'} textTransform='uppercase'>
+              Recuperar a palavra passe
+            </Text>
           </Pressable>
-        </HStack>
-        <Button
-          title='ENTRAR'
-          type='PRIMARY'
-          mt={5}
-          onPress={signIn}
-          isLoading={userIsLoading}
-          _loading={{ _spinner: { color: 'white' } }}
-        />
-      </Center>
+
+          <HStack space={2} alignItems='center' justifyContent='center'>
+            <Text color={'white'} textTransform='uppercase'>
+              Entre com uma rede social
+            </Text>
+          </HStack>
+
+          <HStack
+            space={2}
+            justifyContent='space-between'
+            px={10}
+          >
+            <Pressable>
+              <Icon
+                as={MaterialIcons}
+                name='facebook'
+                color={'gray.200'}
+                size={'3xl'}
+              />
+            </Pressable>
+            <Pressable>
+              <Icon
+                as={FontAwesome}
+                name='google'
+                color={'gray.200'}
+                size={'3xl'}
+              />
+            </Pressable>
+            <Pressable>
+              <Icon
+                as={FontAwesome}
+                name='apple'
+                color={'gray.200'}
+                size={'3xl'}
+              />
+            </Pressable>
+          </HStack>
+
+          <HStack space={2} alignItems='center' justifyContent='center'>
+            <Text color={'white'}
+              fontFamily='medium'
+            >
+              Deseja criar uma conta trybu? Clique
+            </Text>
+            <Pressable
+              onPress={() => {
+                navigate('signup')
+              }}>
+              <Text color={'yellow.400'} fontSize={18}
+                fontFamily='heading'
+              >aqui</Text>
+            </Pressable>
+          </HStack>
+        </VStack>
+      </LayoutBody>
     </LayoutAuth>
 
   )
