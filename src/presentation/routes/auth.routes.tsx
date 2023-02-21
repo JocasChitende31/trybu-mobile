@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { PasswordRecover } from '../Screens/auth/PasswordRecover'
 
 import { Signin } from '../Screens/auth/Signin'
 import { Signup } from '../Screens/auth/Signup'
@@ -19,23 +20,18 @@ export function AuthRoutes () {
       <Screen
         name="start"
         component={Start}
-        options={{
-          tabBarButton: () => null,
-        }}
       />
       <Screen
         name="signin"
         component={Signin}
-        options={{
-          tabBarButton: () => null,
-        }}
       />
       <Screen
         name="signup"
         component={Signup}
-        options={{
-          tabBarButton: () => null,
-        }}
+      />
+      <Screen
+        name="passwordrecover"
+        component={PasswordRecover}
       />
     </Navigator>
   )
