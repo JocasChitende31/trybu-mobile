@@ -20,7 +20,7 @@ export class DateUtils {
     return `${day}${separator}${month}${separator}${date.getFullYear()}`
   }
 
-  public static getDateEn(date: Date, separator: string = '/'): string {
+  public static getDateEn(date: Date, separator: string = '-'): string {
     const day = date.getDate().toString().padStart(2, '0')
     const month = (date.getMonth() + 1).toString().padStart(2, '0')
     return `${date.getFullYear()}${separator}${month}${separator}${day}`
