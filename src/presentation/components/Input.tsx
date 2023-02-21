@@ -14,9 +14,9 @@ interface Props extends IInputProps {
   mode?: 'dark' | 'light'
 }
 
-export function Input ({ label, required, width, mode = 'dark', nolabel, ...rest }: Props) {
+export function Input ({ label, required, width, w, mode = 'dark', nolabel, ...rest }: Props) {
   return (
-    <Box alignItems="center" w={width}>
+    <Box alignItems="center" w={w ?? width}>
       <FormControl isRequired={required} >
         {!nolabel && <FormControl.Label>{label ?? rest.placeholder}</FormControl.Label>}
         <InptupNativeBase

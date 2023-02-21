@@ -26,7 +26,7 @@ export function Signin () {
           color="orange.900"
           textAlign="center"
           fontSize={'2xl'}
-          my={4}
+          mb={4}
         >
           Login
         </Text>
@@ -78,12 +78,14 @@ export function Signin () {
             py={2}
             alignItems='center'
             borderTopColor='yellow.500'
-            borderBottomColor='yellow.500'
             borderTopWidth={0.5}
+            borderBottomColor='yellow.500'
             borderBottomWidth={0.5}
             onPress={() => navigate('passwordrecover')}
           >
-            <Text color={'yellow.400'} textTransform='uppercase'>
+            <Text color={'yellow.400'} textTransform='uppercase'
+              fontFamily='medium'
+            >
               Recuperar a palavra passe
             </Text>
           </Pressable>
@@ -137,7 +139,9 @@ export function Signin () {
               }}>
               <Text color={'yellow.400'} fontSize={18}
                 fontFamily='heading'
-              >aqui</Text>
+              >
+                aqui
+              </Text>
             </Pressable>
           </HStack>
         </VStack>

@@ -9,7 +9,7 @@ export function Button ({ title, type = 'SECONDARY', ...rest }: Props) {
   return (
     <ButtonNativeBase
       w="full"
-      h={14}
+      p={3}
       rounded="sm"
       fontSize="md"
       bg={type === 'PRIMARY' ? '#ECB44A' : 'orange.900'}
