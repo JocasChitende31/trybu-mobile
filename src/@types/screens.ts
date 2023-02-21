@@ -4,6 +4,7 @@ export type IScreens =
   | 'signin'
   | 'signup'
   | 'services'
+  | 'newservice'
   | 'events'
   | 'eventdetail'
   | 'newevent'

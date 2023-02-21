@@ -9,6 +9,7 @@ export declare global {
       signup: undefined
       passwordrecover: undefined
       services: undefined
+      newservice: undefined
       events: undefined
       eventdetail: {
         event: IEvent
