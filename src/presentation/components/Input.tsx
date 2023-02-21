@@ -9,17 +9,22 @@ import {
 
 interface Props extends IInputProps {
   label?: string
+  nolabel?: boolean
   required?: boolean
+  mode?: 'dark' | 'light'
 }
 
-export function Input ({ label, required, width, ...rest }: Props) {
+export function Input ({ label, required, width, mode = 'dark', nolabel, ...rest }: Props) {
   return (
     <Box alignItems="center" w={width}>
       <FormControl isRequired={required} >
-        <FormControl.Label>{label ?? rest.placeholder}</FormControl.Label>
+        {!nolabel && <FormControl.Label>{label ?? rest.placeholder}</FormControl.Label>}
         <InptupNativeBase
           fontSize='md'
-          color={'gray.500'}
+          bg={mode == 'dark' ? 'white' : 'gray.500'}
+          _focus={{
+            bg: mode == 'dark' ? 'white' : 'gray.500'
+          }}
           {...rest}
         />
       </FormControl>

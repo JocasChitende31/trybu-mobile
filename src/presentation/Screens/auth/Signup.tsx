@@ -40,6 +40,9 @@ export function Signup () {
 
         <VStack alignItems={'center'} space={2}>
           <Input
+            mode='dark'
+            nolabel
+            w={'full'}
             type='text'
             placeholder='Nome completo'
             onChangeText={
@@ -50,6 +53,9 @@ export function Signup () {
             value={formDataSignup.name || ''}
           />
           <Input
+            mode='dark'
+            nolabel
+            w={'full'}
             type='text'
             placeholder='Telefone'
             onChangeText={
@@ -60,6 +66,9 @@ export function Signup () {
             value={formDataSignup.phone || ''}
           />
           <Input
+            mode='dark'
+            nolabel
+            w={'full'}
             type='text'
             placeholder='E-mail ou telefone'
             onChangeText={
@@ -70,6 +79,9 @@ export function Signup () {
             value={formDataSignup.email || ''}
           />
           <Input
+            mode='dark'
+            nolabel
+            w={'full'}
             type='password'
             placeholder='Palavra passe'
             onChangeText={

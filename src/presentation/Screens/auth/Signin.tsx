@@ -30,6 +30,9 @@ export function Signin () {
         </Text>
 
         <Input
+          mode='dark'
+          nolabel
+          w={'full'}
           type='text'
           placeholder='E-mail ou telefone'
           onChangeText={
@@ -40,6 +43,9 @@ export function Signin () {
           value={formDataSignin.email || ''}
         />
         <Input
+          mode='dark'
+          nolabel
+          w={'full'}
           type='password'
           placeholder='Palavra passe'
           onChangeText={
