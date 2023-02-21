@@ -3,9 +3,9 @@ import { useNavigation } from '@react-navigation/native'
 
 import { useEvent } from "../../../hooks/useEvent"
 import { Event } from "../../components/Event"
-import { Header } from "../../components/Header"
 import { Button } from "../../components/Button"
 import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
+import { TextTitle } from "../../components/TextTitle"
 
 export function Events () {
   const { events } = useEvent()
@@ -14,10 +14,7 @@ export function Events () {
   return (
     <Layout>
       <LayoutHeader>
-        <Header
-          title={'Eventos'}
-          showBackButton
-        />
+        <TextTitle title="Eventos" />
       </LayoutHeader>
 
       <LayoutBody>

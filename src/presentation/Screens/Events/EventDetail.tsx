@@ -1,8 +1,6 @@
 import { Text, VStack } from "native-base"
 import { useRoute } from '@react-navigation/native'
-import { IScreens } from "../../../@types/screens"
 import { Button } from "../../components/Button"
-import { Header } from "../../components/Header"
 import { IEvent } from "../../../@types/event"
 import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
 
@@ -15,15 +13,7 @@ export function EventDetail () {
   const { event } = route.params as RouteParams
 
   return (
-    <Layout >
-      <LayoutHeader>
-        <Header
-          title={event.title}
-          showBackButton
-          goTo={IScreens.events}
-        />
-      </LayoutHeader>
-
+    <Layout backTo="events">
       <LayoutBody>
         <VStack space={2}>
           <Text

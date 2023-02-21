@@ -1,16 +1,56 @@
-import { Box, ScrollView, VStack } from "native-base"
+import { Box, HStack, ScrollView, VStack } from "native-base"
+import { CaretLeft, DotsThree, DotsThreeOutline, List, UserCircle } from "phosphor-react-native"
 import { ReactNode } from "react"
+import { useNavigation } from '@react-navigation/native'
+
 import { ImageBackground } from "react-native"
+import { ButtonIcon } from "./ButtonIcon"
+import { LogoLG } from "./Logo"
+import { IScreens } from "../../@types/screens"
+import { MenuBar } from "./Menu"
 
 type LayoutPros = {
   children: ReactNode,
   backgroundWithLogo?: boolean
+  backTo?: IScreens
 }
 
-export function Layout ({ children }: LayoutPros) {
+export function Layout ({ children, backTo }: LayoutPros) {
+  const { navigate } = useNavigation()
+
   return (
-    <VStack flex={1} bg={'white'}>
+    <VStack flex={1} bg={'white'} position='relative'>
+      <VStack
+        position={'relative'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        borderBottomColor='orange.100'
+        borderBottomWidth={1}
+        bg={'#E7DED7'}
+        pt={10}
+        pb={5}
+      >
+        {backTo &&
+          <Box position={'absolute'} left={"3"} top={"12"}>
+            <ButtonIcon icon={CaretLeft} onPress={() => navigate(backTo ?? 'home')} />
+          </Box>
+        }
+        <Box
+          position={'absolute'}
+          right={4}
+          bottom={0}
+        >
+          <DotsThreeOutline size={26} />
+          {/* <MenuBar /> */}
+        </Box>
+        <LogoLG
+          w={32}
+          h={10}
+        />
+      </VStack>
       {children}
+
+
     </VStack>
   )
 }
@@ -18,7 +58,7 @@ export function Layout ({ children }: LayoutPros) {
 
 export function LayoutHeader ({ children }: LayoutPros) {
   return (
-    <VStack>
+    <VStack px={5} py={2} shadow={"2"} bg={'white'}>
       {children}
     </VStack>
   )

@@ -26,7 +26,7 @@ export function AppRoutes () {
         tabBarStyle: {
           height: sizes[16],
           borderTopWidth: 2,
-          borderTopColor: colors.yellow[400],
+          borderTopColor: '#ECB44A',
         },
         tabBarItemStyle: {
           position: 'relative',

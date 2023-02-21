@@ -5,7 +5,6 @@ import { useNavigation } from '@react-navigation/native'
 
 import { useAuth } from "../../hooks/useAuth"
 import { StringUtils } from "../../utils/string-utils"
-import { Header } from "../components/Header"
 import { Layout, LayoutBody, LayoutHeader } from "../components/Layout"
 
 export function Profile () {
@@ -13,12 +12,6 @@ export function Profile () {
   const { user } = useAuth()
   return (
     <Layout >
-      <LayoutHeader>
-        <Header
-          title={'Perfil'}
-          showBackButton
-        />
-      </LayoutHeader>
       <LayoutBody>
         <HStack
           alignItems={'center'}
