@@ -9,6 +9,7 @@ import { Events } from '../Screens/Events'
 import { EditProfile } from '../Screens/Users/EditProfile'
 import { NewEvents } from '../Screens/Events/NewEvents'
 import { EventDetail } from '../Screens/Events/EventDetail'
+import { NewService } from '../Screens/Services/NewService'
 
 const { Navigator, Screen } = createBottomTabNavigator()
 
@@ -66,6 +67,13 @@ export function AppRoutes () {
         options={{
           tabBarIcon: ({ color }) => <Briefcase color={color} size={iconSize} />,
           tabBarLabel: '',
+        }}
+      />
+      <Screen
+        name="newservice"
+        component={NewService}
+        options={{
+          tabBarButton: () => null,
         }}
       />
       <Screen

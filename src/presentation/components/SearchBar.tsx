@@ -6,9 +6,10 @@ import { Input } from './Input'
 type Props = {
   onChangeText?: (text: string) => void
   initialValue?: string
+  placeholder?: string
 }
 
-export function SearchBar ({ onChangeText, initialValue }: Props) {
+export function SearchBar ({ onChangeText, initialValue, placeholder }: Props) {
   const [showInput, setShowInput] = useState<boolean>(false)
 
   const handleToggleShow = () => {
@@ -38,7 +39,7 @@ export function SearchBar ({ onChangeText, initialValue }: Props) {
           w={'full'}
           h={10}
           py={2}
-          placeholder='Pesquisar...'
+          placeholder={placeholder ?? 'Pesquisar...'}
           onChangeText={onChangeText}
           defaultValue={initialValue}
         />

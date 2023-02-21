@@ -63,7 +63,7 @@ export function Events () {
   return (
     <Layout>
       <LayoutHeader>
-        <SearchBar initialValue='Olá' onChangeText={filterEvents} />
+        <SearchBar onChangeText={filterEvents} />
         <TextTitle title="Eventos" />
       </LayoutHeader>
 

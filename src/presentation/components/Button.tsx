@@ -3,9 +3,10 @@ import { Button as ButtonNativeBase, Text, IButtonProps } from "native-base"
 interface Props extends IButtonProps {
   title: string
   type?: 'PRIMARY' | 'SECONDARY'
+  textColor?: string
 }
 
-export function Button ({ title, type = 'SECONDARY', ...rest }: Props) {
+export function Button ({ title, type = 'SECONDARY', textColor, ...rest }: Props) {
   return (
     <ButtonNativeBase
       w="full"
@@ -24,7 +25,7 @@ export function Button ({ title, type = 'SECONDARY', ...rest }: Props) {
       <Text
         fontSize='sm'
         fontFamily='heading'
-        color={type === 'PRIMARY' ? 'black' : 'white'}
+        color={textColor ?? (type === 'PRIMARY' ? 'black' : 'white')}
         textTransform="uppercase"
       >
         {title}
