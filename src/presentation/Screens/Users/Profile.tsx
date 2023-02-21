@@ -5,7 +5,8 @@ import { useNavigation } from '@react-navigation/native'
 
 import { useAuth } from "../../../hooks/useAuth"
 import { StringUtils } from "../../../utils/string-utils"
-import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
+import { Layout, LayoutBody } from "../../components/Layout"
+import { DateUtils } from "../../../utils/date-utils"
 
 export function Profile () {
   const { navigate } = useNavigation()
@@ -38,21 +39,24 @@ export function Profile () {
             space={2}
           >
             <Envelope />
-            <Text fontSize={16}>Email: {user.email}</Text>
+            <Text fontSize={16} fontFamily='medium' color='gray.600'>Email: {user.email}</Text>
           </HStack>
           <HStack
             space={2}
           >
             <Phone />
-            <Text fontSize={16}>Telefone: {user.phone ?? 'Adicionar'}</Text>
+            <Text fontSize={16} fontFamily='medium' color='gray.600'>Telefone: {user.phone ?? 'Adicionar'}</Text>
           </HStack>
           <HStack
             space={2}
           >
             <WhatsappLogo />
-            <Text fontSize={16}>WhatsApp: {user.whatsapp ?? 'Não atribuido'}</Text>
+            <Text fontSize={16} fontFamily='medium' color='gray.600'>WhatsApp: {user.whatsapp ?? 'Não atribuido'}</Text>
           </HStack>
 
+          <HStack>
+            <Text fontFamily='medium' color='gray.600'>Membro desde {DateUtils.getDate(new Date(user.createdAt))}</Text>
+          </HStack>
         </VStack>
       </LayoutBody>
     </Layout>

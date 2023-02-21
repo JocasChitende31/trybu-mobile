@@ -3,10 +3,10 @@ import { useTheme } from 'native-base'
 import { Briefcase, House, UserCircle, ClipboardText } from 'phosphor-react-native'
 
 import { Home } from '../Screens/Home'
-import { Profile } from '../Screens/user/Profile'
+import { Profile } from '../Screens/Users/Profile'
 import { Services } from '../Screens/Services'
 import { Events } from '../Screens/Events'
-import { EditProfile } from '../Screens/user/EditProfile'
+import { EditProfile } from '../Screens/Users/EditProfile'
 import { NewEvents } from '../Screens/Events/NewEvents'
 import { EventDetail } from '../Screens/Events/EventDetail'
 

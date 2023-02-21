@@ -1,8 +1,7 @@
 import { Box, HStack, Text, VStack } from "native-base"
 import { Gear, GraduationCap, Lightbulb, Users, UsersThree } from "phosphor-react-native"
-import { Header } from "../components/Header"
-import { Layout, LayoutBody, LayoutHeader } from "../components/Layout"
-import { TextTitle } from "../components/TextTitle"
+import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
+import { TextTitle } from "../../components/TextTitle"
 
 export function Services () {
 

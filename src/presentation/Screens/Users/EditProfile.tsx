@@ -1,4 +1,5 @@
-import { useTheme, VStack } from "native-base"
+import { HStack, useTheme, VStack } from "native-base"
+import { NotePencil } from "phosphor-react-native"
 import { useState } from "react"
 import { IUser } from "../../../@types/user"
 import { useAuth } from "../../../hooks/useAuth"
@@ -8,16 +9,16 @@ import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
 import { TextTitle } from "../../components/TextTitle"
 
 export function EditProfile () {
-  const {
-    colors
-  } = useTheme()
   const { user } = useAuth()
   const [formData, setFormData] = useState<IUser>(user)
 
   return (
     <Layout backTo="profile">
       <LayoutHeader>
-        <TextTitle title="Editar perfil" />
+        <HStack alignItems='center' space={2}>
+          <NotePencil />
+          <TextTitle title="Editar perfil" />
+        </HStack>
       </LayoutHeader>
       <LayoutBody>
         <VStack space={2}>
