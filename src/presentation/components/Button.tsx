@@ -16,8 +16,8 @@ export function Button ({ title, type = 'SECONDARY', ...rest }: Props) {
       _pressed={{
         bg: type === "PRIMARY" ? 'yellow.500' : 'orange.800'
       }}
-      _loading={{
-        _spinner: { color: 'black' }
+      _spinner={{
+        color: type === 'PRIMARY' ? 'black' : 'white',
       }}
       {...rest}
     >

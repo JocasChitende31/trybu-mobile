@@ -1,8 +1,19 @@
 import axios, { AxiosResponse } from 'axios'
 
-const axiosClient = () => {
+type AxiosClientProps = {
+  hasFormData?: boolean
+  token: string
+}
+
+const axiosClient = ({ token, hasFormData }: AxiosClientProps) => {
+  console.log('hasFormData', hasFormData)
+
   return axios.create({
     baseURL: process.env.API_BASE_URL,
+    headers: {
+      'Content-Type': hasFormData ? 'multipart/form-data' : 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
   })
 }
 
@@ -17,18 +28,8 @@ import {
 } from '../../../data/protocol/http/http-get-client'
 import { AuthUtil } from '../../../services/auth-util'
 
-const axiosConfig = async (): Promise<any> => {
-  const token = await AuthUtil.getToken()
-
-  if (!token) {
-    return {}
-  }
-
-  return {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  }
+const getToken = async (): Promise<any> => {
+  return await AuthUtil.getToken()
 }
 
 export class AxiosHttpClient
@@ -37,10 +38,17 @@ export class AxiosHttpClient
   async post(params: HttpPostParams<any>): Promise<HttpResponse<any>> {
     let httpResponse: AxiosResponse<any>
     try {
-      const config = await axiosConfig()
-      httpResponse = await axiosClient().post(params.url, params.body, config)
+      const hasFormData = params?.options?.hasFormData
+      const token = await getToken()
+      httpResponse = await axiosClient({ token, hasFormData }).post(
+        params.url,
+        params.body
+      )
     } catch (error) {
-      httpResponse = error.response
+      httpResponse = error?.response ?? {
+        data: error,
+        statusCode: 500,
+      }
     }
     return {
       body: httpResponse.data,
@@ -51,8 +59,8 @@ export class AxiosHttpClient
   async get(params: HttpGetParams): Promise<HttpResponse<any>> {
     let httpResponse: AxiosResponse<any>
     try {
-      const config = await axiosConfig()
-      httpResponse = await axiosClient().get(params.url, config)
+      const token = await getToken()
+      httpResponse = await axiosClient({ token }).get(params.url)
     } catch (error) {
       httpResponse = error.response
     }

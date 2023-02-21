@@ -41,7 +41,7 @@ export function Layout ({ children, backTo }: LayoutPros) {
           bottom={0}
         >
           <DotsThreeOutline size={26} />
-          {/* <MenuBar /> */}
+          <MenuBar />
         </Box>
         <LogoLG
           w={32}
