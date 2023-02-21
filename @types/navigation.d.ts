@@ -7,6 +7,7 @@ export declare global {
       start: undefined
       signin: undefined
       signup: undefined
+      passwordrecover: undefined
       services: undefined
       events: undefined
       eventdetail: {
