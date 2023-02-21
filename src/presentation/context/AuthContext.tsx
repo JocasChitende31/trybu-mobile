@@ -12,8 +12,10 @@ interface FormDataSigninProps {
 interface FormDataSignupProps {
   name: string
   phone: string
+  whatsapp: string
   email: string
   password: string
+  password_confirmation: string
 }
 
 
