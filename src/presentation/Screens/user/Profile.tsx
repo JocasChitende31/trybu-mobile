@@ -3,9 +3,9 @@ import { UserCircle, NotePencil, Envelope, Phone, WhatsappLogo } from "phosphor-
 import { Pressable } from "react-native"
 import { useNavigation } from '@react-navigation/native'
 
-import { useAuth } from "../../hooks/useAuth"
-import { StringUtils } from "../../utils/string-utils"
-import { Layout, LayoutBody, LayoutHeader } from "../components/Layout"
+import { useAuth } from "../../../hooks/useAuth"
+import { StringUtils } from "../../../utils/string-utils"
+import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
 
 export function Profile () {
   const { navigate } = useNavigation()
