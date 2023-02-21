@@ -58,19 +58,17 @@ export function UploadContainer ({ onSelectFile, label, placeholder, height = 32
 
   return (
     <Box position='relative'>
-      <Pressable
-        onPress={handleRemoveFile}
-        position='absolute'
-        right={0}
-        // bg='gray.300'
-        // _pressed={{
-        //   bg: 'yellow.400'
-        // }}
-        p={1}
-        zIndex={100}
-      >
-        <X size={15} color='red' />
-      </Pressable>
+      {
+        photo && <Pressable
+          onPress={handleRemoveFile}
+          position='absolute'
+          right={0}
+          p={1}
+          zIndex={100}
+        >
+          <X size={15} color='red' />
+        </Pressable>
+      }
 
       <Text color={'gray.500'} mb={1}>
         {label ?? 'Arquivo'}
