@@ -35,26 +35,24 @@ export function Profile () {
           bg='white'
         >
           <HStack
-            flexDir={'row'}
             space={2}
           >
             <Envelope />
             <Text fontSize={16}>Email: {user.email}</Text>
           </HStack>
           <HStack
-            flexDir={'row'}
             space={2}
           >
             <Phone />
             <Text fontSize={16}>Telefone: {user.phone ?? 'Adicionar'}</Text>
           </HStack>
           <HStack
-            flexDir={'row'}
             space={2}
           >
             <WhatsappLogo />
             <Text fontSize={16}>WhatsApp: {user.whatsapp ?? 'Não atribuido'}</Text>
           </HStack>
+
         </VStack>
       </LayoutBody>
     </Layout>

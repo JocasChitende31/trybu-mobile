@@ -3,10 +3,10 @@ import { useTheme } from 'native-base'
 import { Briefcase, House, UserCircle, ClipboardText } from 'phosphor-react-native'
 
 import { Home } from '../Screens/Home'
-import { Profile } from '../Screens/Profile'
+import { Profile } from '../Screens/user/Profile'
 import { Services } from '../Screens/Services'
 import { Events } from '../Screens/Events'
-import { EditProfile } from '../Screens/EditProfile'
+import { EditProfile } from '../Screens/user/EditProfile'
 import { NewEvents } from '../Screens/Events/NewEvents'
 import { EventDetail } from '../Screens/Events/EventDetail'
 
@@ -24,7 +24,8 @@ export function AppRoutes () {
         tabBarActiveTintColor: colors.orange[600],
         tabBarInactiveTintColor: colors.gray[300],
         tabBarStyle: {
-          height: sizes[16],
+          padding: 0,
+          margin: 0,
           borderTopWidth: 2,
           borderTopColor: '#ECB44A',
         },
