@@ -1,4 +1,4 @@
-import { Box, Center, HStack, Pressable, Text, VStack } from 'native-base'
+import { Box, HStack, Pressable, Text, VStack } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 
 import { Button } from '../../components/Button'
@@ -6,6 +6,8 @@ import { Input } from '../../components/Input'
 import { LogoLG } from '../../components/Logo'
 import { useAuth } from '../../../hooks/useAuth'
 import { LayoutAuth, LayoutBody } from '../../components/Layout'
+import { AuthTitle } from '../../components/AuthTitle'
+import { Note, NotePencil } from 'phosphor-react-native'
 
 
 export function Signup () {
@@ -31,14 +33,16 @@ export function Signup () {
         <LogoLG />
       </Box>
       <LayoutBody>
-        <Text
-          color="orange.900"
-          textAlign="center"
-          fontSize={'2xl'}
-          mb={4}
-        >
-          Regista-se
-        </Text>
+        <AuthTitle>
+          <NotePencil />
+          <Text
+            color="orange.900"
+            textAlign="center"
+            fontSize={'2xl'}
+          >
+            Regista-se
+          </Text>
+        </AuthTitle>
 
         <VStack alignItems={'center'} space={4}>
           <Input

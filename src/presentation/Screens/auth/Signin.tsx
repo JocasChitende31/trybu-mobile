@@ -7,6 +7,8 @@ import { Input } from '../../components/Input'
 import { LogoLG } from '../../components/Logo'
 import { useAuth } from '../../../hooks/useAuth'
 import { LayoutAuth, LayoutBody } from '../../components/Layout'
+import { Key, SignIn } from 'phosphor-react-native'
+import { AuthTitle } from '../../components/AuthTitle'
 
 export function Signin () {
   const { navigate } = useNavigation()
@@ -22,14 +24,16 @@ export function Signin () {
         <LogoLG />
       </Box>
       <LayoutBody>
-        <Text
-          color="orange.900"
-          textAlign="center"
-          fontSize={'2xl'}
-          mb={4}
-        >
-          Login
-        </Text>
+        <AuthTitle>
+          <SignIn />
+          <Text
+            color="orange.900"
+            textAlign="center"
+            fontSize={'2xl'}
+          >
+            Login
+          </Text>
+        </AuthTitle>
 
         <VStack
           w='full'
@@ -82,8 +86,11 @@ export function Signin () {
             borderBottomColor='yellow.500'
             borderBottomWidth={0.5}
             onPress={() => navigate('passwordrecover')}
+            flexDir='row'
+            justifyContent='center'
           >
-            <Text color={'yellow.400'} textTransform='uppercase'
+            <Key color='#ECB44A' size={15} />
+            <Text color={'yellow.400'} ml={2} textTransform='uppercase'
               fontFamily='medium'
             >
               Recuperar a palavra passe
