@@ -1,9 +1,8 @@
 import { useCallback, useState } from 'react'
-import { Box, HStack, Text, VStack } from "native-base"
+import { Box, HStack, Pressable, Text, VStack } from "native-base"
 import { useFocusEffect, useNavigation } from '@react-navigation/native'
 
 import { Event } from "../../components/Event"
-import { Button } from "../../components/Button"
 import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
 import { TextTitle } from "../../components/TextTitle"
 import { IEvent } from '../../../@types/event'
@@ -13,6 +12,7 @@ import { HttpStatusCode } from '../../../data/protocol/http'
 import { Alert } from 'react-native'
 import { useAuth } from '../../../hooks/useAuth'
 import { SearchBar } from '../../components/SearchBar'
+import { PlusCircle } from 'phosphor-react-native'
 
 export function Events () {
   const { navigate } = useNavigation()
@@ -58,13 +58,32 @@ export function Events () {
     setFilteredEvents(events)
   }
 
-  if (isLoading) return <Loading />
-
   return (
     <Layout>
       <LayoutHeader>
         <SearchBar onChangeText={filterEvents} />
-        <TextTitle title="Eventos" />
+        <HStack
+          alignItems='center'
+        >
+          <TextTitle title='Eventos' />
+          <Text ml={1}>{isLoading ? '' : `(${events.length})`}</Text>
+          <Pressable
+            flexDir='row'
+            ml='auto'
+            bg='yellow.400'
+            px={3}
+            py={1}
+            borderRadius={'full'}
+            _pressed={{
+              bg: 'yellow.500'
+            }}
+            shadow={1}
+            onPress={() => navigate('newevent')}
+          >
+            <Text fontFamily='medium' mr={1}>Novo</Text>
+            <PlusCircle />
+          </Pressable>
+        </HStack>
       </LayoutHeader>
 
       <LayoutBody>
@@ -82,25 +101,20 @@ export function Events () {
           </Text>
         </HStack>
 
-        <Box mt={5}>
-          <Button
-            title="Criar novo evento"
-            type="PRIMARY"
-            onPress={() => navigate('newevent')}
-          />
-        </Box>
-
-        <VStack mt={5} space={5}>
-          {filteredEvents.length < 1 ?
-            <Box alignItems={'center'}>
-              <Text>Nenhum evento de momento.</Text>
-            </Box>
-            :
-            events.map((event) => (
-              <Event key={event.id} event={event} />
-            ))
-          }
-        </VStack>
+        {isLoading ? <Loading text='Carregando eventos' />
+          :
+          <VStack mt={5} space={5}>
+            {filteredEvents.length < 1 ?
+              <Box alignItems={'center'}>
+                <Text>Nenhum evento de momento.</Text>
+              </Box>
+              :
+              events.map((event) => (
+                <Event key={event.id} event={event} />
+              ))
+            }
+          </VStack>
+        }
       </LayoutBody>
     </Layout>
   )
