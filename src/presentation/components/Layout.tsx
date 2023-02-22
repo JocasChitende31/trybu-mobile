@@ -80,7 +80,7 @@ export function LayoutBody ({ children }: LayoutPros) {
 export function LayoutAuth ({ children, backgroundWithLogo = false }: LayoutPros) {
   let image
   if (backgroundWithLogo) {
-    image = require(`../../../assets/splash.jpg`)
+    image = require(`../../../assets/splash.png`)
   } else {
     image = require(`../../../assets/fundo.jpg`)
   }

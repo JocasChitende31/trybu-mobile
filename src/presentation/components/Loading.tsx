@@ -10,7 +10,7 @@ export const LoadingLg = () => {
           flex: 1,
           justifyContent: 'center'
         }}
-        source={require('../../../assets/splash.jpg')}>
+        source={require('../../../assets/splash.png')}>
         <Spinner size={48} color="yellow.500" />
       </ImageBackground>
     </Center>
