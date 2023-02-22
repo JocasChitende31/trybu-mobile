@@ -11,3 +11,5 @@ export type IScreens =
   | 'profile'
   | 'editprofile'
   | 'passwordrecover'
+  | 'forums'
+  | 'newforumpost'

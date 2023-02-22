@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { useTheme } from 'native-base'
-import { Briefcase, House, UserCircle, ClipboardText } from 'phosphor-react-native'
+import { Briefcase, House, UserCircle, ClipboardText, Chat } from 'phosphor-react-native'
 
 import { Home } from '../Screens/Home'
 import { Profile } from '../Screens/Users/Profile'
@@ -10,6 +10,8 @@ import { EditProfile } from '../Screens/Users/EditProfile'
 import { NewEvents } from '../Screens/Events/NewEvents'
 import { EventDetail } from '../Screens/Events/EventDetail'
 import { NewService } from '../Screens/Services/NewService'
+import { Forums } from '../Screens/forum'
+import { NewForumPost } from '../Screens/forum/NewForumPost'
 
 const { Navigator, Screen } = createBottomTabNavigator()
 
@@ -94,6 +96,22 @@ export function AppRoutes () {
       <Screen
         name="eventdetail"
         component={EventDetail}
+        options={{
+          tabBarButton: () => null,
+        }}
+      />
+
+      <Screen
+        name="forums"
+        component={Forums}
+        options={{
+          tabBarIcon: ({ color }) => <Chat color={color} size={iconSize} />,
+          tabBarLabel: '',
+        }}
+      />
+      <Screen
+        name="newforumpost"
+        component={NewForumPost}
         options={{
           tabBarButton: () => null,
         }}
