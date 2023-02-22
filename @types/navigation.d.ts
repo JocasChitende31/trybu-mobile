@@ -8,17 +8,23 @@ export declare global {
       signin: undefined
       signup: undefined
       passwordrecover: undefined
+
       services: undefined
       newservice: undefined
+
       events: undefined
       eventdetail: {
         event: IEvent
       }
       newevent: undefined
+
       profile: undefined
       editprofile: {
         backto: undefined
       }
+
+      forums: undefined
+      newforumpost: undefined
     }
   }
 }
