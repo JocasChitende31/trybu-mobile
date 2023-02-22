@@ -20,7 +20,7 @@ export function ForumCard ({ forum }: { forum: IForumPost }) {
         </Text>
       </HStack>
 
-      <Text fontFamily={14}>
+      <Text fontSize={14}>
         {forum.content}
       </Text>
       <AuthorBox author={forum.author} />
