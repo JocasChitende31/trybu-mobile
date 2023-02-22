@@ -8,7 +8,6 @@ export type IScreens =
   | 'events'
   | 'eventdetail'
   | 'newevent'
-  | 'detail'
   | 'profile'
   | 'editprofile'
   | 'passwordrecover'

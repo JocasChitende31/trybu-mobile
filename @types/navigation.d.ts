@@ -15,11 +15,10 @@ export declare global {
         event: IEvent
       }
       newevent: undefined
-      detail: {
-        id: string
-      }
       profile: undefined
-      editprofile: undefined
+      editprofile: {
+        backto: undefined
+      }
     }
   }
 }
