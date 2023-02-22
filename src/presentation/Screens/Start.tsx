@@ -6,7 +6,7 @@ import { LogoLG } from '../components/Logo'
 import { ImageBackground } from 'react-native'
 import { useEffect, useState } from 'react'
 import { AuthUtil } from '../../services/auth-util'
-import { Loading } from '../components/Loading'
+import { LoadingLg } from '../components/Loading'
 
 const image = require('../../../assets/fundo.jpg')
 
@@ -28,7 +28,7 @@ export function Start () {
     })()
   }, [])
 
-  if (['loading', 'no'].includes(firstTime)) return <Loading />
+  if (['loading', 'no'].includes(firstTime)) return <LoadingLg />
 
   return (
     <ImageBackground source={image} style={{ flex: 1 }}>

@@ -1,7 +1,7 @@
-import { Center, Spinner } from 'native-base'
+import { Center, HStack, Spinner, Text, VStack } from 'native-base'
 import { ImageBackground } from 'react-native'
 
-export const Loading = () => {
+export const LoadingLg = () => {
   return (
     <Center flex={1}>
       <ImageBackground
@@ -14,5 +14,14 @@ export const Loading = () => {
         <Spinner size={48} color="yellow.500" />
       </ImageBackground>
     </Center>
+  )
+}
+
+export const Loading = ({ text }: { text?: string }) => {
+  return (
+    <HStack space={2} flex={1} alignItems='center' justifyContent='center' py={5}>
+      <Spinner size={32} color="yellow.500" />
+      {text && <Text fontFamily='medium'>{text}</Text>}
+    </HStack>
   )
 }
