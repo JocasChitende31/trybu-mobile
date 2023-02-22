@@ -28,8 +28,6 @@ export function NewService () {
             type="text"
             placeholder="Nome do serviço"
           />
-
-
           <VStack
             space={1}
           >

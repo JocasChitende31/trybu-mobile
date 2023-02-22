@@ -234,21 +234,3 @@ export function NewEvents () {
     </Layout >
   )
 }
-
-interface Props extends IInputProps {
-  label?: string
-}
-
-// function Input ({ label, width, ...rest }: Props) {
-//   return (
-//     <Box alignItems="center" w={width}>
-//       <FormControl isRequired >
-//         <FormControl.Label>{label ?? rest.placeholder}</FormControl.Label>
-//         <InptupNativeBase
-//           fontSize='md'
-//           {...rest}
-//         />
-//       </FormControl>
-//     </Box>
-//   )
-// }

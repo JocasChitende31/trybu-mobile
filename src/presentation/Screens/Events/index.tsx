@@ -42,19 +42,15 @@ export function Events () {
   }
 
   const filterEvents = (text: string) => {
-    const typedText = text.trim()
-    console.log('typedText', typedText)
+    const typedText = text
 
     if (typedText) {
       const filterdEvents = events.filter(event => {
         return event.title.toLowerCase().includes(typedText.toLowerCase())
       })
-      console.log('filterdEvents', filterdEvents.map(e => e.title))
-
       setFilteredEvents(filterdEvents)
       return
     }
-
     setFilteredEvents(events)
   }
 
@@ -66,7 +62,7 @@ export function Events () {
           alignItems='center'
         >
           <TextTitle title='Eventos' />
-          <Text ml={1}>{isLoading ? '' : `(${events.length})`}</Text>
+          <Text ml={1}>{isLoading ? '' : `(${filteredEvents.length})`}</Text>
           <ButtonRoundedSmall
             text='Novo'
             onPress={() => navigate('newevent')}
@@ -97,7 +93,7 @@ export function Events () {
                 <Text>Nenhum evento de momento.</Text>
               </Box>
               :
-              events.map((event) => (
+              filteredEvents.map((event) => (
                 <Event key={event.id} event={event} />
               ))
             }
