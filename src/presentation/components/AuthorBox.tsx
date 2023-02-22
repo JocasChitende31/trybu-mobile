@@ -84,8 +84,8 @@ function BoxInfo ({ author, show, onHiding, ...props }: BoxInfoProps) {
               </Pressable>
             </HStack>
             <VStack>
-              <Text>{author.name}</Text>
-              <Text>{author.email}</Text>
+              <Text fontFamily='medium'>{author.name}</Text>
+              {author.email && <Text>{author.email}</Text>}
               <Box flexDir='row'>
                 <Pressable
                   bg='blue.500'
