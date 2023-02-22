@@ -2,7 +2,7 @@ import { Center } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 
 import { Button } from '../components/Button'
-import { LogoLG } from '../components/Logo'
+import { LogoLG, LogoText } from '../components/Logo'
 import { ImageBackground } from 'react-native'
 import { useEffect, useState } from 'react'
 import { AuthUtil } from '../../services/auth-util'
@@ -33,7 +33,10 @@ export function Start () {
   return (
     <ImageBackground source={image} style={{ flex: 1 }}>
       <Center flex={1} p={5} alignItems="center" backgroundColor={'transparent'}>
-        <LogoLG />
+        <LogoText
+          h={24}
+          w={248}
+        />
         <Button
           title='CLIQUE PARA COMEÇAR'
           type='PRIMARY'
