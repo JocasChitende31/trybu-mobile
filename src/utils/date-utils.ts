@@ -1,3 +1,5 @@
+import { RandUtils } from './rand-utils'
+
 export class DateUtils {
   private static readonly months = [
     'Janeiro',
@@ -55,5 +57,20 @@ export class DateUtils {
     const hour = date.getHours().toString().padStart(2, '0')
     const minute = date.getMinutes().toString().padStart(2, '0')
     return `${hour}:${minute}`
+  }
+
+  static randonDate() {
+    const currentYear = new Date().getFullYear()
+
+    const { year, month, day } = {
+      year: RandUtils.rand(currentYear - 3, currentYear),
+      month: RandUtils.rand(1, 12).toString().padStart(2, '0'),
+      day: RandUtils.rand(1, 29).toString().padStart(2, '0'),
+    }
+    return new Date(`${year}-${month}-${day}`)
+  }
+
+  static randonDateString() {
+    return this.randonDate().toString()
   }
 }
