@@ -1,6 +1,6 @@
 import { IEvent } from '../../@types/event'
 
-export const EventList = [
+export const EventListData = [
   {
     id: '1',
     title: 'Encontro dos empreendedores',
