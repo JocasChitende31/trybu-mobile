@@ -5,6 +5,7 @@ import { IEvent } from "../../@types/event"
 import { DateUtils } from "../../utils/date-utils"
 import { Calendar } from "phosphor-react-native"
 import { UrlUtils } from "../../utils/url-utils"
+import { AuthorBox } from "./AuthorBox"
 
 export function Event ({ event }: { event: IEvent }) {
   const { navigate } = useNavigation()
@@ -28,6 +29,9 @@ export function Event ({ event }: { event: IEvent }) {
         >
           {event.title}
         </Text>
+
+        {event.author && <AuthorBox author={event.author} />}
+
         <HStack
           alignItems={'center'}
           space={2}

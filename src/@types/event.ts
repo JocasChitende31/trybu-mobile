@@ -1,3 +1,5 @@
+import { IUser } from './user'
+
 export type IEvent = {
   id: string
   title: string
@@ -10,4 +12,8 @@ export type IEvent = {
   price: string
   status: 'Publicado' | 'Pendente' | 'Inactivo' | null
   contact: string
+  authorId: string
+  author?: IUser
+  createdAt: string
+  updatedAt: string
 }

@@ -1,5 +1,5 @@
 import { Box, HStack, ScrollView, VStack } from "native-base"
-import { CaretLeft, DotsThree, DotsThreeOutline, List, UserCircle } from "phosphor-react-native"
+import { CaretLeft, DotsThreeOutline } from "phosphor-react-native"
 import { ReactNode } from "react"
 import { useNavigation } from '@react-navigation/native'
 
