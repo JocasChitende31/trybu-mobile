@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Pressable, Text, Menu, Box, NativeBaseProvider, Center } from "native-base"
-import { SignOut } from 'phosphor-react-native'
+import { SignOut, UserCircle } from 'phosphor-react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import { useAuth } from '../../hooks/useAuth'
@@ -18,9 +18,9 @@ export function MenuBar () {
     return (
       <Pressable
         accessibilityLabel="More options menu" {...triggerProps}
-        pr={2}
+      // pr={2}
       >
-        <Text
+        {/* <Text
           color={'gray.600'}
           borderColor='gray.500'
           borderWidth={1}
@@ -31,7 +31,8 @@ export function MenuBar () {
           w={6}
         >
           {StringUtils.getAvatarName(user.name)}
-        </Text>
+        </Text> */}
+        <UserCircle size={32} />
       </Pressable >
     )
   }

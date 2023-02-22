@@ -61,7 +61,7 @@ function BoxInfo ({ author, show, onHiding, ...props }: BoxInfoProps) {
     setOpen(false)
   }
   const handleGoProfile = () => {
-    navigate(author.id === user.id ? 'editprofile' : 'profile')
+    navigate('profile', { user: author })
   }
 
   return (

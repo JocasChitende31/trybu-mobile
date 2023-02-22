@@ -1,22 +1,34 @@
-import { HStack, Text, VStack } from "native-base"
+import { HStack, Text, VStack, Pressable } from "native-base"
+import { useRoute } from '@react-navigation/native'
 import { UserCircle, NotePencil, Envelope, Phone, WhatsappLogo } from "phosphor-react-native"
-import { Pressable } from "react-native"
 import { useNavigation } from '@react-navigation/native'
 
 import { useAuth } from "../../../hooks/useAuth"
 import { StringUtils } from "../../../utils/string-utils"
 import { Layout, LayoutBody } from "../../components/Layout"
 import { DateUtils } from "../../../utils/date-utils"
+import { IUser } from "../../../@types/user"
+
+interface RouteParams {
+  user: IUser
+}
 
 export function Profile () {
   const { navigate } = useNavigation()
-  const { user } = useAuth()
+  const { user: logeedUser } = useAuth()
+
+  const route = useRoute()
+
+  let user = (route.params as RouteParams)?.user
+
+  if (!user) { user = logeedUser }
+
   return (
     <Layout >
       <LayoutBody>
         <HStack
           alignItems={'center'}
-          justifyContent='center'
+          // justifyContent='center'
           borderBottomWidth={2}
           borderBottomColor='yellow.400'
           space={2}
@@ -24,10 +36,13 @@ export function Profile () {
           <UserCircle size={60} />
 
           <Text fontSize={32}>{StringUtils.getFirstAndLastWord(user.name)}</Text>
-
-          <Pressable onPress={() => navigate('editprofile')}>
-            <NotePencil />
-          </Pressable>
+          {
+            user.id === logeedUser.id &&
+            <Pressable onPress={() => navigate('editprofile')}
+              ml='auto'>
+              <NotePencil />
+            </Pressable>
+          }
         </HStack>
         <VStack
           flex={1}

@@ -7,7 +7,7 @@ import { Calendar } from "phosphor-react-native"
 import { UrlUtils } from "../../utils/url-utils"
 import { AuthorBox } from "./AuthorBox"
 
-export function Event ({ event }: { event: IEvent }) {
+export function EventCard ({ event }: { event: IEvent }) {
   const { navigate } = useNavigation()
   return (
     <VStack
@@ -45,7 +45,7 @@ export function Event ({ event }: { event: IEvent }) {
             <Text>{DateUtils.getDateTimeMinute(new Date(event.startsAt))}</Text>
 
             {event.endsAt &&
-              <Text>{DateUtils.getDate(new Date(event.endsAt))}</Text>
+              <Text> | {DateUtils.getDateTimeMinute(new Date(event.endsAt))}</Text>
             }
           </HStack>
         </HStack>

@@ -1,5 +1,6 @@
 import { HStack, useTheme, VStack } from "native-base"
 import { NotePencil } from "phosphor-react-native"
+import { useRoute } from '@react-navigation/native'
 import { useState } from "react"
 import { IUser } from "../../../@types/user"
 import { useAuth } from "../../../hooks/useAuth"
@@ -8,8 +9,21 @@ import { Input } from "../../components/Input"
 import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
 import { TextTitle } from "../../components/TextTitle"
 
+
+interface RouteParams {
+  user: IUser
+}
+
+
 export function EditProfile () {
-  const { user } = useAuth()
+  const route = useRoute()
+
+  const { user: logeedUser } = useAuth()
+
+  let user = (route.params as RouteParams)?.user
+
+  if (!user) { user = logeedUser }
+
   const [formData, setFormData] = useState<IUser>(user)
 
   return (

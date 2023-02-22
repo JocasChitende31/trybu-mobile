@@ -1,3 +1,4 @@
+import { IUser } from '../src/@types/user'
 import { IEvent } from './event'
 
 export declare global {
@@ -18,9 +19,12 @@ export declare global {
       }
       newevent: undefined
 
-      profile: undefined
+      profile: {
+        user: IUser
+      }
       editprofile: {
         backto: undefined
+        user: IUser
       }
 
       forums: undefined

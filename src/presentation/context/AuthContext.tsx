@@ -3,6 +3,8 @@ import { useToast } from "native-base"
 import { makeAxiosHttpClient } from "../../main/factory/axios-http-client-factory"
 import { AuthUtil } from "../../services/auth-util"
 import { IUser } from "../../@types/user"
+import { UserListData } from "../../utils/data/user"
+import { StringUtils } from "../../utils/string-utils"
 
 interface FormDataSigninProps {
   email: string
@@ -24,6 +26,7 @@ export interface AuthContextDataProps {
   userIsLoading: boolean
   signIn: () => Promise<void>,
   signUp: () => Promise<boolean>,
+  signinTest: () => void
   signOut: (message?: string) => Promise<void>,
   formDataSignin: FormDataSigninProps,
   setFormDataSignin: (formData: FormDataSigninProps) => void
@@ -83,8 +86,48 @@ export function AuthContextProvider ({ children }: AuthProviderProps) {
     }
   }
 
+  function signinTest () {
+    if (
+      !formDataSignin.email || formDataSignin.email.trim() == ''
+      || !formDataSignin.password || formDataSignin.password.trim() == ''
+    ) {
+      return toast.show({
+        title: 'Informe o email e a senha.',
+        placement: 'top',
+        bgColor: 'red.500'
+      })
+    }
+
+    const userData = UserListData.find(user => (
+      (
+        user.email === formDataSignin.email ||
+        user.username === formDataSignin.email
+      ) &&
+      user.password === formDataSignin.password
+    ))
+
+    if (userData) {
+      toast.show({
+        title: `Bem-vindo ${StringUtils.getFirstWord(userData.name)}!`,
+        placement: 'top',
+        bgColor: 'green.500'
+      })
+      setUser(userData)
+    } else {
+      toast.show({
+        title: 'As credenciais não conferem',
+        placement: 'top',
+        bgColor: 'red.500'
+      })
+    }
+
+  }
+
   async function signIn () {
-    if (!formDataSignin.email || formDataSignin.email.trim() == '' || !formDataSignin.password || formDataSignin.password.trim() == '') {
+    if (
+      !formDataSignin.email || formDataSignin.email.trim() == ''
+      || !formDataSignin.password || formDataSignin.password.trim() == ''
+    ) {
       toast.show({
         title: 'Informe o email e a senha.',
         placement: 'top',
@@ -141,6 +184,7 @@ export function AuthContextProvider ({ children }: AuthProviderProps) {
   return (
     <AuthContext.Provider value={{
       signIn,
+      signinTest,
       signOut,
       signUp,
       user,

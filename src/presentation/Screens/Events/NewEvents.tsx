@@ -1,6 +1,6 @@
 import DateTimePicker from "@react-native-community/datetimepicker"
-
-import { IInputProps, VStack, HStack } from "native-base"
+import { useToast } from "native-base"
+import { VStack, HStack } from "native-base"
 import { useState } from "react"
 import { Alert } from "react-native"
 import { IEvent } from "../../../@types/event"
@@ -14,6 +14,8 @@ import { TextTitle } from "../../components/TextTitle"
 import { UploadContainer, UploadFileProps } from "../../components/UploadContainer"
 
 export function NewEvents () {
+  const toast = useToast()
+
   const [formData, setFormData] = useState<IEvent>({} as IEvent)
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -65,6 +67,11 @@ export function NewEvents () {
   }
 
   const handleSubmit = async (): Promise<void> => {
+    return toast.show({
+      title: 'Acção em desenvolvimento. Aqui vai poder cadastrar eventos.',
+      placement: 'top',
+      bgColor: 'green.500'
+    })
     const formDataBody = new FormData()
 
     const data = {

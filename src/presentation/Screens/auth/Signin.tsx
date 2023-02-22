@@ -1,19 +1,26 @@
 import { Box, HStack, Icon, Pressable, Text, VStack } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons'
+import { useState, useEffect } from 'react'
+import { Key, SignIn } from 'phosphor-react-native'
 
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import { LogoLG } from '../../components/Logo'
 import { useAuth } from '../../../hooks/useAuth'
 import { LayoutAuth, LayoutBody } from '../../components/Layout'
-import { Key, SignIn } from 'phosphor-react-native'
 import { AuthTitle } from '../../components/AuthTitle'
+import { UserListData } from '../../../utils/data/user'
+
+const userAdmin = UserListData[0]
 
 export function Signin () {
   const { navigate } = useNavigation()
-  const { signIn, userIsLoading, formDataSignin, setFormDataSignin } = useAuth()
+  const { signIn, signinTest, userIsLoading, formDataSignin, setFormDataSignin } = useAuth()
 
+  useEffect(() => {
+    setFormDataSignin(userAdmin)
+  })
   const handleChangeInput = (name: string, text: string) => {
     setFormDataSignin({ ...formDataSignin, [name]: text })
   }
@@ -44,6 +51,7 @@ export function Signin () {
             nolabel
             type='text'
             placeholder='E-mail ou telefone'
+            defaultValue={formDataSignin.email}
             onChangeText={
               (text: string) => {
                 handleChangeInput('email', text)
@@ -56,6 +64,7 @@ export function Signin () {
             nolabel
             type='password'
             placeholder='Palavra passe'
+            defaultValue={formDataSignin.password}
             onChangeText={
               (text: string) => {
                 handleChangeInput('password', text)
@@ -66,7 +75,7 @@ export function Signin () {
           <Button
             title='ENTRAR'
             type='PRIMARY'
-            onPress={signIn}
+            onPress={signinTest}
             isLoading={userIsLoading}
             _loading={{ _spinner: { color: 'white' } }}
           />

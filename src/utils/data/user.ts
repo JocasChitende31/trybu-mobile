@@ -4,7 +4,7 @@ import { DateUtils } from '../date-utils'
 export const UserListData = [
   {
     id: '1',
-    name: 'Admin',
+    name: 'Admin Test',
     email: 'admin@gmail.com',
     username: 'admin',
     password: 'admin',
@@ -28,7 +28,7 @@ export const UserListData = [
   },
   {
     id: '4',
-    name: 'Solange',
+    name: 'Solange CEO',
     email: 'solange@gmail.com',
     username: 'solange',
     password: '123456',

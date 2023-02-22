@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import { Box, HStack, Text, VStack } from "native-base"
 import { useFocusEffect, useNavigation } from '@react-navigation/native'
 
-import { Event } from "../../components/Event"
+import { EventCard } from "../../components/EventCard"
 import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
 import { TextTitle } from "../../components/TextTitle"
 import { IEvent } from '../../../@types/event'
@@ -13,6 +13,7 @@ import { Alert } from 'react-native'
 import { useAuth } from '../../../hooks/useAuth'
 import { SearchBar } from '../../components/SearchBar'
 import { ButtonRoundedSmall } from '../../components/Button'
+import { EventListData } from '../../../utils/data/event'
 
 export function Events () {
   const { navigate } = useNavigation()
@@ -20,12 +21,16 @@ export function Events () {
 
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
-  const [events, setEvents] = useState<IEvent[]>([])
+  const [events, setEvents] = useState<IEvent[]>(EventListData)
   const [filteredEvents, setFilteredEvents] = useState<IEvent[]>([])
 
   useFocusEffect(useCallback(() => {
-    fetchEvents()
+    setFilteredEvents(EventListData)
+    setIsLoading(false)
   }, []))
+  // useFocusEffect(useCallback(() => {
+  //   fetchEvents()
+  // }, []))
 
   async function fetchEvents () {
     setIsLoading(true)
@@ -94,7 +99,7 @@ export function Events () {
               </Box>
               :
               filteredEvents.map((event) => (
-                <Event key={event.id} event={event} />
+                <EventCard key={event.id} event={event} />
               ))
             }
           </VStack>

@@ -40,7 +40,7 @@ export function Layout ({ children, backTo }: LayoutPros) {
           right={4}
           bottom={0}
         >
-          <DotsThreeOutline size={26} />
+          {/* <DotsThreeOutline size={26} /> */}
           <MenuBar />
         </Box>
         <LogoLG

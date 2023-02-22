@@ -1,4 +1,6 @@
 import { IEvent } from '../../@types/event'
+import { RandUtils } from '../rand-utils'
+import { UserListData } from './user'
 
 export const EventListData = [
   {
@@ -10,7 +12,7 @@ export const EventListData = [
       'Encontro dos empreendedores é um evento que vai mudar a vida dos empreendedores',
     startsAt: new Date().toISOString(),
     endsAt: new Date().toISOString(),
-    owner: 'Xando',
+    author: UserListData[RandUtils.rand(1, UserListData.length - 1)],
     price: '15.000kz',
     status: 'Publicado',
   },
@@ -23,7 +25,7 @@ export const EventListData = [
       'Moedas nacionais é um evento que vai mudar a vida dos empreendedores',
     startsAt: new Date().toISOString(),
     endsAt: new Date().toISOString(),
-    owner: 'Trybu',
+    author: UserListData[RandUtils.rand(1, UserListData.length - 1)],
     price: '25.000kz',
     status: 'Publicado',
   },
@@ -36,7 +38,7 @@ export const EventListData = [
       'Empreendedor de sucesso é um evento que vai mudar a vida dos empreendedores',
     startsAt: new Date().toISOString(),
     endsAt: new Date().toISOString(),
-    owner: 'Trybu',
+    author: UserListData[RandUtils.rand(1, UserListData.length - 1)],
     price: '25.000kz',
     status: 'Publicado',
   },
@@ -49,7 +51,7 @@ export const EventListData = [
       'Negócio em 2023 é um evento que vai mudar a vida dos empreendedores',
     startsAt: new Date().toISOString(),
     endsAt: new Date().toISOString(),
-    owner: 'Trybu',
+    author: UserListData[RandUtils.rand(1, UserListData.length - 1)],
     price: '25.000kz',
     status: 'Publicado',
   },
