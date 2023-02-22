@@ -1,10 +1,11 @@
-import { Box, HStack, Pressable, Text, VStack } from "native-base"
-import { Gear, GraduationCap, Lightbulb, PlusCircle, Users, UsersThree } from "phosphor-react-native"
+import { Box, HStack, Text, VStack } from "native-base"
+import { Gear, GraduationCap, Lightbulb, Users, UsersThree } from "phosphor-react-native"
 import { useNavigation } from '@react-navigation/native'
 
 import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
 import { TextTitle } from "../../components/TextTitle"
 import { SearchBar } from "../../components/SearchBar"
+import { ButtonRoundedSmall } from "../../components/Button"
 
 export function Services () {
   const { navigate } = useNavigation()
@@ -16,22 +17,11 @@ export function Services () {
           alignItems='center'
         >
           <TextTitle title="Serviços" />
-          <Pressable
-            flexDir='row'
-            ml='auto'
-            bg='yellow.400'
-            px={3}
-            py={1}
-            borderRadius={'full'}
-            _pressed={{
-              bg: 'yellow.500'
-            }}
-            shadow={1}
+
+          <ButtonRoundedSmall
+            text='Novo'
             onPress={() => navigate('newservice')}
-          >
-            <Text fontFamily='medium' mr={1}>Novo</Text>
-            <PlusCircle />
-          </Pressable>
+          />
         </HStack>
       </LayoutHeader>
       <LayoutBody>

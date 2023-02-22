@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { Box, HStack, Pressable, Text, VStack } from "native-base"
+import { Box, HStack, Text, VStack } from "native-base"
 import { useFocusEffect, useNavigation } from '@react-navigation/native'
 
 import { Event } from "../../components/Event"
@@ -12,7 +12,7 @@ import { HttpStatusCode } from '../../../data/protocol/http'
 import { Alert } from 'react-native'
 import { useAuth } from '../../../hooks/useAuth'
 import { SearchBar } from '../../components/SearchBar'
-import { PlusCircle } from 'phosphor-react-native'
+import { ButtonRoundedSmall } from '../../components/Button'
 
 export function Events () {
   const { navigate } = useNavigation()
@@ -67,22 +67,10 @@ export function Events () {
         >
           <TextTitle title='Eventos' />
           <Text ml={1}>{isLoading ? '' : `(${events.length})`}</Text>
-          <Pressable
-            flexDir='row'
-            ml='auto'
-            bg='yellow.400'
-            px={3}
-            py={1}
-            borderRadius={'full'}
-            _pressed={{
-              bg: 'yellow.500'
-            }}
-            shadow={1}
+          <ButtonRoundedSmall
+            text='Novo'
             onPress={() => navigate('newevent')}
-          >
-            <Text fontFamily='medium' mr={1}>Novo</Text>
-            <PlusCircle />
-          </Pressable>
+          />
         </HStack>
       </LayoutHeader>
 

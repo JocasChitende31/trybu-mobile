@@ -1,4 +1,6 @@
-import { Button as ButtonNativeBase, Text, IButtonProps } from "native-base"
+import { ReactElement } from 'react'
+import { Button as ButtonNativeBase, Text, IButtonProps, Pressable, IPressableProps } from "native-base"
+import { PlusCircle } from "phosphor-react-native"
 
 interface Props extends IButtonProps {
   title: string
@@ -31,5 +33,30 @@ export function Button ({ title, type = 'SECONDARY', textColor, ...rest }: Props
         {title}
       </Text>
     </ButtonNativeBase >
+  )
+}
+
+interface ButtonRoundedSmallProps extends IPressableProps {
+  text: string
+  icon?: ReactElement
+}
+export const ButtonRoundedSmall = ({ text, icon = <PlusCircle />, ...props }: ButtonRoundedSmallProps) => {
+  return (
+    <Pressable
+      flexDir='row'
+      ml='auto'
+      bg='yellow.400'
+      px={3}
+      py={1}
+      borderRadius={'full'}
+      _pressed={{
+        bg: 'yellow.500'
+      }}
+      shadow={1}
+      {...props}
+    >
+      <Text fontFamily='medium' mr={1}>{text}</Text>
+      {icon}
+    </Pressable>
   )
 }
