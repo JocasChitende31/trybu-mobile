@@ -18,8 +18,12 @@ export function Signin () {
   const { navigate } = useNavigation()
   const { signIn, signinTest, userIsLoading, formDataSignin, setFormDataSignin } = useAuth()
 
+  const [initialData, setInitalData] = useState({ email: '', password: '' })
+
   useEffect(() => {
-    setFormDataSignin(userAdmin)
+    if (!formDataSignin.email) {
+      setInitalData(userAdmin)
+    }
   })
   const handleChangeInput = (name: string, text: string) => {
     setFormDataSignin({ ...formDataSignin, [name]: text })
@@ -51,7 +55,7 @@ export function Signin () {
             nolabel
             type='text'
             placeholder='E-mail ou telefone'
-            defaultValue={formDataSignin.email}
+            defaultValue={initialData.email}
             onChangeText={
               (text: string) => {
                 handleChangeInput('email', text)
@@ -64,7 +68,7 @@ export function Signin () {
             nolabel
             type='password'
             placeholder='Palavra passe'
-            defaultValue={formDataSignin.password}
+            defaultValue={initialData.password}
             onChangeText={
               (text: string) => {
                 handleChangeInput('password', text)
