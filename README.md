@@ -25,5 +25,5 @@ Para baixar e executar o backend [siga essas instruções](https://github.com/de
 
 Acesse o app:
 
-- [Baixando a apk clicando aqui](https://drive.google.com/file/d/1MjzYOMdVXp0NJ9EYNxh9nr6mCRh3ISYF/view?usp=share_link)
+- Baixando a apk [clicando aqui](https://www.mediafire.com/file/t4wtinzs4sder6g/Trybu.apk/file)
 - [Asistindo o vídeo de apresentação do app](https://youtu.be/0yPdtSVUaBI)
