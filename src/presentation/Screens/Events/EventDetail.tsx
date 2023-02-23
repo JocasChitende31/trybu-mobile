@@ -3,10 +3,11 @@ import { ReactElement } from 'react'
 import { useRoute } from '@react-navigation/native'
 import { Button } from "../../components/Button"
 import { IEvent } from "../../../@types/event"
-import { Layout, LayoutBody } from "../../components/Layout"
+import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
 import { UrlUtils } from "../../../utils/url-utils"
 import { DateUtils } from "../../../utils/date-utils"
 import { MapPinLine, Money, Phone, Timer } from "phosphor-react-native"
+import { TextTitle } from "../../components/TextTitle"
 
 interface RouteParams {
   event: IEvent
@@ -21,6 +22,9 @@ export function EventDetail () {
 
   return (
     <Layout backTo="events" key={event.id}>
+      <LayoutHeader>
+        <TextTitle title="Evento" />
+      </LayoutHeader>
       <LayoutBody>
         <VStack space={2}>
           {event.picture &&
