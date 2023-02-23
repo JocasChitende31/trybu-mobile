@@ -100,10 +100,10 @@ export function AuthContextProvider ({ children }: AuthProviderProps) {
 
     const userData = UserListData.find(user => (
       (
-        user.email === formDataSignin.email ||
-        user.username === formDataSignin.email
+        user.email.toLowerCase() === formDataSignin.email.toLowerCase() ||
+        user.username.toLowerCase() === formDataSignin.email.toLowerCase()
       ) &&
-      user.password === formDataSignin.password
+      user.password.toLowerCase() === formDataSignin.password.toLowerCase()
     ))
 
     if (userData) {
