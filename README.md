@@ -2,6 +2,8 @@ Um app mobile da startup TRYBU, que é um espaço de gestão de comunidade de mu
 
 <br>
 
+<img src="./.github/preview.png">
+
 ## 🚀 Tecnologias
 
 Esse projecto foi desenvolvido com as seguintes tecnologias:
@@ -18,3 +20,5 @@ Esse projecto foi desenvolvido com as seguintes tecnologias:
 - Execute o comando: `npm run start` para iniciar o servidor do Expo/app
 
 Para baixar e executar o backend [siga essas instruções](https://github.com/devincubadora/trybu-api).
+
+[Asista o vídeo de apresentação do app](https://youtu.be/0yPdtSVUaBI)
