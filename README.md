@@ -21,4 +21,9 @@ Esse projecto foi desenvolvido com as seguintes tecnologias:
 
 Para baixar e executar o backend [siga essas instruções](https://github.com/devincubadora/trybu-api).
 
-[Asista o vídeo de apresentação do app](https://youtu.be/0yPdtSVUaBI)
+## Acesso ao app
+
+Acesse o app:
+
+- [Baixando a apk clicando aqui](https://drive.google.com/file/d/1MjzYOMdVXp0NJ9EYNxh9nr6mCRh3ISYF/view?usp=share_link)
+- [Asistindo o vídeo de apresentação do app](https://youtu.be/0yPdtSVUaBI)
