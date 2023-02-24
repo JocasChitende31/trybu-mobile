@@ -1,8 +1,11 @@
-import { Image, IImageProps } from "native-base"
+import { Image, IImageProps } from "native-base";
+import React from 'react';
 
-const LogoImg = require('../../../assets/logo.png')
-const LogoImgLg = require('../../../assets/logotipo.png')
-const LogoTex = require('../../../assets/logo-text.png')
+
+const LogoImg = require('../../../assets/logo.png');
+const LogoImgLg = require('../../../assets/logotipo.png');
+const LogoTex = require('../../../assets/logo-text.png');
+
 
 export function Logo () {
   return (

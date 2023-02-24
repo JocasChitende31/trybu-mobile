@@ -1,14 +1,15 @@
-import { Box, HStack, Text, VStack } from "native-base"
-import { PencilLine } from "phosphor-react-native"
-import { useNavigation } from '@react-navigation/native'
-import { useState } from 'react'
+import { Box, HStack, Text, VStack } from "native-base";
+import { PencilLine } from "phosphor-react-native";
+import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
 
-import { Button } from "../../components/Button"
-import { Input } from "../../components/Input"
-import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
-import { TextTitle } from "../../components/TextTitle"
-import { UploadContainer } from "../../components/UploadContainer"
-import { Picker } from "@react-native-picker/picker"
+import { Button } from "../../components/Button";
+import { Input } from "../../components/Input";
+import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout";
+import { TextTitle } from "../../components/TextTitle";
+import { UploadContainer } from "../../components/UploadContainer";
+import { Picker } from "@react-native-picker/picker";
+import React from "react";
 
 export function NewService () {
   const { navigate } = useNavigation()

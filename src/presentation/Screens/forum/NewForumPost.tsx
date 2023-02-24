@@ -1,12 +1,13 @@
-import { HStack, VStack } from "native-base"
-import { PencilLine } from "phosphor-react-native"
-import { useNavigation } from '@react-navigation/native'
+import { HStack, VStack } from "native-base";
+import { PencilLine } from "phosphor-react-native";
+import { useNavigation } from '@react-navigation/native';
 
-import { Button } from "../../components/Button"
-import { Input, TextArea } from "../../components/Input"
-import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
-import { TextTitle } from "../../components/TextTitle"
-import { UploadContainer } from "../../components/UploadContainer"
+import { Button } from "../../components/Button";
+import { Input, TextArea } from "../../components/Input";
+import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout";
+import { TextTitle } from "../../components/TextTitle";
+import { UploadContainer } from "../../components/UploadContainer";
+import React from "react";
 
 export function NewForumPost () {
   const { navigate } = useNavigation()

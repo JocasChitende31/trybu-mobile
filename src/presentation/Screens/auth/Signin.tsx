@@ -1,16 +1,17 @@
-import { Box, HStack, Icon, Pressable, Text, VStack } from 'native-base'
-import { useNavigation } from '@react-navigation/native'
-import { MaterialIcons, FontAwesome } from '@expo/vector-icons'
-import { useState, useEffect } from 'react'
-import { Key, SignIn } from 'phosphor-react-native'
+import { Box, HStack, Icon, Pressable, Text, VStack } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
+import { MaterialIcons, FontAwesome } from '@expo/vector-icons';
+import { useState, useEffect } from 'react';
+import { Key, SignIn } from 'phosphor-react-native';
 
-import { Button } from '../../components/Button'
-import { Input } from '../../components/Input'
-import { LogoLG } from '../../components/Logo'
-import { useAuth } from '../../../hooks/useAuth'
-import { LayoutAuth, LayoutBody } from '../../components/Layout'
-import { AuthTitle } from '../../components/AuthTitle'
-import { UserListData } from '../../../utils/data/user'
+import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
+import { LogoLG } from '../../components/Logo';
+import { useAuth } from '../../../hooks/useAuth';
+import { LayoutAuth, LayoutBody } from '../../components/Layout';
+import { AuthTitle } from '../../components/AuthTitle';
+import { UserListData } from '../../../utils/data/user';
+import React from 'react';
 
 const userAdmin = UserListData[0]
 

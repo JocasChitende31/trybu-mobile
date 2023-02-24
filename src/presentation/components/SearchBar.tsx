@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import { Box, HStack, Pressable, VStack } from "native-base"
-import { MagnifyingGlass, X } from "phosphor-react-native"
-import { Input } from './Input'
+import { useState } from 'react';
+import { Box, HStack, Pressable, VStack } from "native-base";
+import { MagnifyingGlass, X } from "phosphor-react-native";
+import { Input } from './Input';
+import React from 'react';
 
 type Props = {
   onChangeText?: (text: string) => void

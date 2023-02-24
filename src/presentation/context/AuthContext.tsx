@@ -1,10 +1,12 @@
-import { createContext, ReactNode, useState, useEffect } from "react"
-import { useToast } from "native-base"
-import { makeAxiosHttpClient } from "../../main/factory/axios-http-client-factory"
-import { AuthUtil } from "../../services/auth-util"
-import { IUser } from "../../@types/user"
-import { UserListData } from "../../utils/data/user"
-import { StringUtils } from "../../utils/string-utils"
+import { createContext, ReactNode, useState, useEffect } from "react";
+import { useToast } from "native-base";
+import { makeAxiosHttpClient } from "../../main/factory/axios-http-client-factory";
+import { AuthUtil } from "../../services/auth-util";
+import { IUser } from "../../@types/user";
+import { UserListData } from "../../utils/data/user";
+import { StringUtils } from "../../utils/string-utils";
+import React from "react";
+
 
 interface FormDataSigninProps {
   email: string
@@ -70,7 +72,7 @@ export function AuthContextProvider ({ children }: AuthProviderProps) {
     if ([201, 200].includes(statusCode)) {
       setFormDataSignup({} as FormDataSignupProps)
       toast.show({
-        title: 'Cadastro efectuado com sucesso. Já pode fazer o login.',
+        title: 'Cadastro efectuado com sucesso. Já pode fazer o login!',
         placement: 'top',
         bgColor: 'green.500'
       })
@@ -108,7 +110,7 @@ export function AuthContextProvider ({ children }: AuthProviderProps) {
 
     if (userData) {
       toast.show({
-        title: `Bem-vindo ${StringUtils.getFirstWord(userData.name)}!`,
+        title: `Bem-vinda ${StringUtils.getFirstWord(userData.name)}!`,
         placement: 'top',
         bgColor: 'green.500'
       })

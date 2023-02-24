@@ -1,7 +1,8 @@
-import { useState } from "react"
-import { Box, Image, Pressable, Text } from "native-base"
-import * as ImagePicker from 'expo-image-picker'
-import { X } from "phosphor-react-native"
+import { useState } from "react";
+import { Box, Image, Pressable, Text } from "native-base";
+import * as ImagePicker from 'expo-image-picker';
+import { X } from "phosphor-react-native";
+import React from "react";
 
 export type UploadFileProps = {
   uri: string

@@ -1,11 +1,12 @@
-import { HStack, Image, Pressable, Text, VStack } from "native-base"
-import { useNavigation } from '@react-navigation/native'
+import { HStack, Image, Pressable, Text, VStack } from "native-base";
+import { useNavigation } from '@react-navigation/native';
 
-import { IEvent } from "../../@types/event"
-import { DateUtils } from "../../utils/date-utils"
-import { Calendar } from "phosphor-react-native"
-import { UrlUtils } from "../../utils/url-utils"
-import { AuthorBox } from "./AuthorBox"
+import { IEvent } from "../../@types/event";
+import { DateUtils } from "../../utils/date-utils";
+import { Calendar } from "phosphor-react-native";
+import { UrlUtils } from "../../utils/url-utils";
+import { AuthorBox } from "./AuthorBox";
+import React from "react";
 
 export function EventCard ({ event }: { event: IEvent }) {
   const { navigate } = useNavigation()

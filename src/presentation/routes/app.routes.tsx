@@ -1,17 +1,18 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { useTheme } from 'native-base'
-import { Briefcase, House, UserCircle, ClipboardText, Chat } from 'phosphor-react-native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useTheme } from 'native-base';
+import { Briefcase, House, UserCircle, ClipboardText, Chat } from 'phosphor-react-native';
 
-import { Home } from '../Screens/Home'
-import { Profile } from '../Screens/Users/Profile'
-import { Services } from '../Screens/Services'
-import { Events } from '../Screens/Events'
-import { EditProfile } from '../Screens/Users/EditProfile'
-import { NewEvents } from '../Screens/Events/NewEvents'
-import { EventDetail } from '../Screens/Events/EventDetail'
-import { NewService } from '../Screens/Services/NewService'
-import { Forums } from '../Screens/forum'
-import { NewForumPost } from '../Screens/forum/NewForumPost'
+import { Home } from '../Screens/Home';
+import { Profile } from '../Screens/Users/Profile';
+import { Services } from '../Screens/Services';
+import { Events } from '../Screens/Events';
+import { EditProfile } from '../Screens/Users/EditProfile';
+import { NewEvents } from '../Screens/Events/NewEvents';
+import { EventDetail } from '../Screens/Events/EventDetail';
+import { NewService } from '../Screens/Services/NewService';
+import { Forums } from '../Screens/forum';
+import { NewForumPost } from '../Screens/forum/NewForumPost';
+import React from 'react';
 
 const { Navigator, Screen } = createBottomTabNavigator()
 

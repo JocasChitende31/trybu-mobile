@@ -1,13 +1,14 @@
-import { HStack, useTheme, VStack } from "native-base"
-import { NotePencil } from "phosphor-react-native"
-import { useRoute } from '@react-navigation/native'
-import { useState } from "react"
-import { IUser } from "../../../@types/user"
-import { useAuth } from "../../../hooks/useAuth"
-import { Button } from "../../components/Button"
-import { Input } from "../../components/Input"
-import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
-import { TextTitle } from "../../components/TextTitle"
+import { HStack, useTheme, VStack } from "native-base";
+import { NotePencil } from "phosphor-react-native";
+import { useRoute } from '@react-navigation/native';
+import { useState } from "react";
+import { IUser } from "../../../@types/user";
+import { useAuth } from "../../../hooks/useAuth";
+import { Button } from "../../components/Button";
+import { Input } from "../../components/Input";
+import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout";
+import { TextTitle } from "../../components/TextTitle";
+import React from "react";
 
 
 interface RouteParams {

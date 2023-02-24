@@ -1,6 +1,7 @@
-import { ReactElement } from 'react'
-import { Button as ButtonNativeBase, Text, IButtonProps, Pressable, IPressableProps } from "native-base"
-import { PlusCircle } from "phosphor-react-native"
+import { ReactElement } from 'react';
+import { Button as ButtonNativeBase, Text, IButtonProps, Pressable, IPressableProps } from "native-base";
+import { PlusCircle } from "phosphor-react-native";
+import React from 'react';
 
 interface Props extends IButtonProps {
   title: string

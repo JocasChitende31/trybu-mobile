@@ -1,6 +1,7 @@
 import { createContext, useState, ReactNode } from "react"
 import { IEvent } from "../../@types/event"
 import { EventListData } from "../../utils/data/event"
+import React from "react"
 
 export interface EventProps {
   events: IEvent[],

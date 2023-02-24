@@ -1,10 +1,11 @@
-import { Text, HStack, Box, VStack } from 'native-base'
-import { CaretLeft } from 'phosphor-react-native'
-import { useNavigation } from '@react-navigation/native'
+import { Text, HStack, Box, VStack } from 'native-base';
+import { CaretLeft } from 'phosphor-react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { ButtonIcon } from './ButtonIcon'
-import { MenuBar } from './Menu'
-import { IScreens } from '../../@types/screens'
+import { ButtonIcon } from './ButtonIcon';
+import { MenuBar } from './Menu';
+import { IScreens } from '../../@types/screens';
+import React from 'react';
 
 interface Props {
   title?: string

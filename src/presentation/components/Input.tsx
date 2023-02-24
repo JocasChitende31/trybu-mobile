@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Input as InptupNativeBase,
   IInputProps,
@@ -5,7 +6,7 @@ import {
   FormControl,
   TextArea as TextAreaNativeBase,
   ITextAreaProps
-} from "native-base"
+} from "native-base";
 
 interface Props extends IInputProps {
   label?: string

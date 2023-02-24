@@ -1,5 +1,6 @@
-import { HStack } from "native-base"
-import { ReactNode } from "react"
+import { HStack } from "native-base";
+import { ReactNode } from "react";
+import React from "react";
 
 type Props = {
   children: ReactNode

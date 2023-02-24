@@ -1,5 +1,6 @@
-import { ImageBackground } from "react-native"
-import { Layout } from "../components/Layout"
+import { ImageBackground } from "react-native";
+import { Layout } from "../components/Layout";
+import React from "react";
 
 const image = require('../../../assets/home.jpg')
 

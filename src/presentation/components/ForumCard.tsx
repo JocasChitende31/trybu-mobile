@@ -1,8 +1,9 @@
-import { HStack, Text, VStack } from "native-base"
-import { ChatDots, Clock } from "phosphor-react-native"
-import { IForumPost } from "../../@types/forumpost"
-import { DateUtils } from "../../utils/date-utils"
-import { AuthorBox } from "./AuthorBox"
+import { HStack, Text, VStack } from "native-base";
+import { ChatDots, Clock } from "phosphor-react-native";
+import { IForumPost } from "../../@types/forumpost";
+import { DateUtils } from "../../utils/date-utils";
+import { AuthorBox } from "./AuthorBox";
+import React from "react";
 
 export function ForumCard ({ forum }: { forum: IForumPost }) {
   return (

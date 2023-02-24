@@ -1,12 +1,13 @@
-import { useState, useCallback, useEffect } from 'react'
-import { Box, HStack, Text, VStack, Pressable } from "native-base"
-import { useNavigation } from '@react-navigation/native'
+import { useState, useCallback, useEffect } from 'react';
+import { Box, HStack, Text, VStack, Pressable } from "native-base";
+import { useNavigation } from '@react-navigation/native';
 
-import { InterfaceVStackProps } from "native-base/lib/typescript/components/primitives/Stack/VStack"
-import { UserCircle, X } from "phosphor-react-native"
-import { IUser } from "../../@types/user"
-import { StringUtils } from "../../utils/string-utils"
-import { useAuth } from '../../hooks/useAuth'
+import { InterfaceVStackProps } from "native-base/lib/typescript/components/primitives/Stack/VStack";
+import { UserCircle, X } from "phosphor-react-native";
+import { IUser } from "../../@types/user";
+import { StringUtils } from "../../utils/string-utils";
+import { useAuth } from '../../hooks/useAuth';
+import React from 'react';
 
 type Props = {
   author: IUser

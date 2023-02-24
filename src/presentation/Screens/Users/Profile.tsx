@@ -1,13 +1,14 @@
-import { HStack, Text, VStack, Pressable } from "native-base"
-import { useRoute } from '@react-navigation/native'
-import { UserCircle, NotePencil, Envelope, Phone, WhatsappLogo } from "phosphor-react-native"
-import { useNavigation } from '@react-navigation/native'
+import { HStack, Text, VStack, Pressable } from "native-base";
+import { useRoute } from '@react-navigation/native';
+import { UserCircle, NotePencil, Envelope, Phone, WhatsappLogo } from "phosphor-react-native";
+import { useNavigation } from '@react-navigation/native';
 
-import { useAuth } from "../../../hooks/useAuth"
-import { StringUtils } from "../../../utils/string-utils"
-import { Layout, LayoutBody } from "../../components/Layout"
-import { DateUtils } from "../../../utils/date-utils"
-import { IUser } from "../../../@types/user"
+import { useAuth } from "../../../hooks/useAuth";
+import { StringUtils } from "../../../utils/string-utils";
+import { Layout, LayoutBody } from "../../components/Layout";
+import { DateUtils } from "../../../utils/date-utils";
+import { IUser } from "../../../@types/user";
+import React from "react";
 
 interface RouteParams {
   user: IUser

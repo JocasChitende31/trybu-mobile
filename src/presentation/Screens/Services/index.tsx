@@ -1,11 +1,12 @@
-import { Box, HStack, Text, VStack } from "native-base"
-import { Gear, GraduationCap, Lightbulb, Users, UsersThree } from "phosphor-react-native"
-import { useNavigation } from '@react-navigation/native'
+import { Box, HStack, Text, VStack } from "native-base";
+import { Gear, GraduationCap, Lightbulb, Users, UsersThree } from "phosphor-react-native";
+import { useNavigation } from '@react-navigation/native';
 
-import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout"
-import { TextTitle } from "../../components/TextTitle"
-import { SearchBar } from "../../components/SearchBar"
-import { ButtonRoundedSmall } from "../../components/Button"
+import { Layout, LayoutBody, LayoutHeader } from "../../components/Layout";
+import { TextTitle } from "../../components/TextTitle";
+import { SearchBar } from "../../components/SearchBar";
+import { ButtonRoundedSmall } from "../../components/Button";
+import React from "react";
 
 export function Services () {
   const { navigate } = useNavigation()

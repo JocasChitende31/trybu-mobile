@@ -1,6 +1,6 @@
-import { Center, HStack, Spinner, Text, VStack } from 'native-base'
-import { ImageBackground } from 'react-native'
-
+import { Center, HStack, Spinner, Text, VStack } from 'native-base';
+import { ImageBackground } from 'react-native';
+import React from 'react';
 export const LoadingLg = () => {
   return (
     <Center flex={1}>
@@ -8,8 +8,9 @@ export const LoadingLg = () => {
         style={{
           width: '100%',
           flex: 1,
-          justifyContent: 'center'
+          justifyContent: 'center',
         }}
+
         source={require('../../../assets/splash.png')}>
         <Spinner size={48} color="yellow.500" />
       </ImageBackground>

@@ -1,13 +1,14 @@
-import { Box, HStack, ScrollView, VStack } from "native-base"
-import { CaretLeft, DotsThreeOutline } from "phosphor-react-native"
-import { ReactNode } from "react"
-import { useNavigation } from '@react-navigation/native'
+import { Box, HStack, ScrollView, VStack } from "native-base";
+import { CaretLeft, DotsThreeOutline } from "phosphor-react-native";
+import { ReactNode } from "react";
+import { useNavigation } from '@react-navigation/native';
+import React from "react";
 
-import { ImageBackground } from "react-native"
-import { ButtonIcon } from "./ButtonIcon"
-import { LogoLG } from "./Logo"
-import { IScreens } from "../../@types/screens"
-import { MenuBar } from "./Menu"
+import { ImageBackground } from "react-native";
+import { ButtonIcon } from "./ButtonIcon";
+import { LogoLG } from "./Logo";
+import { IScreens } from "../../@types/screens";
+import { MenuBar } from "./Menu";
 
 type LayoutPros = {
   children: ReactNode,

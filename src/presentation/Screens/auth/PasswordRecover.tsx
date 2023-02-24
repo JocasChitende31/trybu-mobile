@@ -1,13 +1,14 @@
-import { Box, Pressable, Text, VStack } from 'native-base'
-import { useNavigation } from '@react-navigation/native'
+import { Box, Pressable, Text, VStack } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
 
-import { Button } from '../../components/Button'
-import { Input } from '../../components/Input'
-import { LogoLG } from '../../components/Logo'
-import { useAuth } from '../../../hooks/useAuth'
-import { LayoutAuth, LayoutBody } from '../../components/Layout'
-import { ArrowLeft, Lock } from 'phosphor-react-native'
-import { AuthTitle } from '../../components/AuthTitle'
+import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
+import { LogoLG } from '../../components/Logo';
+import { useAuth } from '../../../hooks/useAuth';
+import { LayoutAuth, LayoutBody } from '../../components/Layout';
+import { ArrowLeft, Lock } from 'phosphor-react-native';
+import { AuthTitle } from '../../components/AuthTitle';
+import React from 'react';
 
 export function PasswordRecover () {
   const { navigate } = useNavigation()

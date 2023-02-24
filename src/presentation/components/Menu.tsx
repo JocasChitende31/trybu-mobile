@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import { Pressable, Text, Menu, Box, NativeBaseProvider, Center } from "native-base"
-import { SignOut, UserCircle } from 'phosphor-react-native'
-import { useNavigation } from '@react-navigation/native'
+import { useState } from 'react';
+import { Pressable, Text, Menu, Box, NativeBaseProvider, Center } from "native-base";
+import { SignOut, UserCircle } from 'phosphor-react-native';
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
 
-import { useAuth } from '../../hooks/useAuth'
-import { InterfacePressableProps } from 'native-base/lib/typescript/components/primitives/Pressable/types'
+import { useAuth } from '../../hooks/useAuth';
+import { InterfacePressableProps } from 'native-base/lib/typescript/components/primitives/Pressable/types';
 
-import { ModalAlert } from './Modal'
-import { StringUtils } from '../../utils/string-utils'
+import { ModalAlert } from './Modal';
+import { StringUtils } from '../../utils/string-utils';
 
 export function MenuBar () {
   const { user, signOut } = useAuth()

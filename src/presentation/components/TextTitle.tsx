@@ -1,4 +1,5 @@
-import { Text } from "native-base"
+import { Text } from "native-base";
+import React from "react";
 
 type TextTitlePros = {
   title: string,

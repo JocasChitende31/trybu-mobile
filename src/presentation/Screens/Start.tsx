@@ -1,14 +1,15 @@
-import { Center } from 'native-base'
-import { useNavigation } from '@react-navigation/native'
+import { Center } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
 
-import { Button } from '../components/Button'
-import { LogoLG, LogoText } from '../components/Logo'
-import { ImageBackground } from 'react-native'
-import { useEffect, useState } from 'react'
-import { AuthUtil } from '../../services/auth-util'
-import { LoadingLg } from '../components/Loading'
+import { Button } from '../components/Button';
+import { LogoLG, LogoText } from '../components/Logo';
+import { ImageBackground } from 'react-native';
+import { useEffect, useState } from 'react';
+import { AuthUtil } from '../../services/auth-util';
+import { LoadingLg } from '../components/Loading';
+import React from 'react';
 
-const image = require('../../../assets/fundo.jpg')
+const image = require('../../../assets/fundo.jpg');
 
 export function Start () {
   const { navigate } = useNavigation()

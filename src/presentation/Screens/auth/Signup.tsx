@@ -1,13 +1,14 @@
-import { Box, HStack, Pressable, Text, VStack } from 'native-base'
-import { useNavigation } from '@react-navigation/native'
+import { Box, HStack, Pressable, Text, VStack } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
 
-import { Button } from '../../components/Button'
-import { Input } from '../../components/Input'
-import { LogoLG } from '../../components/Logo'
-import { useAuth } from '../../../hooks/useAuth'
-import { LayoutAuth, LayoutBody } from '../../components/Layout'
-import { AuthTitle } from '../../components/AuthTitle'
-import { Note, NotePencil } from 'phosphor-react-native'
+import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
+import { LogoLG } from '../../components/Logo';
+import { useAuth } from '../../../hooks/useAuth';
+import { LayoutAuth, LayoutBody } from '../../components/Layout';
+import { AuthTitle } from '../../components/AuthTitle';
+import { Note, NotePencil } from 'phosphor-react-native';
+import React from 'react';
 
 
 export function Signup () {

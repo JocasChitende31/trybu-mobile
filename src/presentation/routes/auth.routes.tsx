@@ -1,9 +1,10 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { PasswordRecover } from '../Screens/auth/PasswordRecover'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { PasswordRecover } from '../Screens/auth/PasswordRecover';
 
-import { Signin } from '../Screens/auth/Signin'
-import { Signup } from '../Screens/auth/Signup'
-import { Start } from '../Screens/Start'
+import { Signin } from '../Screens/auth/Signin';
+import { Signup } from '../Screens/auth/Signup';
+import { Start } from '../Screens/Start';
+import React from 'react';;
 
 const { Navigator, Screen } = createBottomTabNavigator()
 
